@@ -1,0 +1,13 @@
+      invoke  active_record
+      remove    db/migrate/20211203180429_create_users.rb
+      remove    app/models/user.rb
+      invoke    rspec
+      remove      spec/models/user_spec.rb
+      invoke  controller
+      remove    app/controllers/users_controller.rb
+      invoke    rspec
+      remove      spec/requests/users_spec.rb
+      invoke  resource_route
+       route    resources :users
+      invoke  serializer
+      remove    app/serializers/user_serializer.rb
