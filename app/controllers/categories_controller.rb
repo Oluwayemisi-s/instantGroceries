@@ -3,11 +3,13 @@ class CategoriesController < ApplicationController
 #    before_action :is_authenticated
    
     def index
+        categories = Category.all 
+        render json: categories
     end
 
     def show
         category = Category.find(params[:id])
-        render json: @category, status: :ok, serializer: CategoryShowSerializer
+        render json: category, status: :ok, serializer: CategoryShowSerializer
     end
 
     def create

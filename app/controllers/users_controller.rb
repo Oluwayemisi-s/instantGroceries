@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
     rescue_from ActiveRecord::RecordInvalid, with: :record_invalid
-    before_action :is_authorised, only: [:update, :destroy]
+    #before_action :is_authorised, only: [:update, :destroy]
 
     def index
         users = User.all 
