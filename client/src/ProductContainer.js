@@ -1,8 +1,8 @@
 
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import ProductView from "./ProductView";
 import Header from "./Header"
-import { useState } from "react";
+
 function ProductContainer(){
 
     const [allProducts, setProducts] = useState([]);
