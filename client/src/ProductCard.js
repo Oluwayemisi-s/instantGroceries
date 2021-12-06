@@ -7,6 +7,7 @@ function ProductCard({product: { name, product_description,image, price, stock }
     
     return (
         <div>
+
           <img>{image}</img>
           <h3>{name}</h3>
           <small>{product_description}</small>

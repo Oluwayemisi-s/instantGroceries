@@ -1,3 +1,7 @@
+
+import React, { useState } from "react"
+import ProductView from "./ProductView";
+import Header from "./Header"
 import { useState } from "react";
 function ProductContainer(){
 
@@ -10,8 +14,9 @@ function ProductContainer(){
       }, []);
     return (
         <div>
-          
+          <Header />
          <ProductView allProducts = {allProducts}/>
+
         </div>
     )
 }
