@@ -1,13 +1,22 @@
+
 import React, { useState } from "react"
 import ProductView from "./ProductView";
 import Header from "./Header"
+import { useState } from "react";
+function ProductContainer(){
 
-function ProductContainer( {user} ){
+    const [allProducts, setProducts] = useState([]);
+
+    useEffect(() => {
+        fetch("/products")
+          .then((res) => res.json())
+          .then((data) => setProducts(data));
+      }, []);
     return (
         <div>
-            <Header />
-            Hello User
-         <ProductView/>
+          <Header />
+         <ProductView allProducts = {allProducts}/>
+
         </div>
     )
 }
