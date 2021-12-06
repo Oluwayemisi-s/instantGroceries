@@ -1,101 +1,96 @@
-import React from "react"
+import React, { useState } from "react";
 
-export default function SignUpForm () {
-    // const [signupform, setSignupform] = useState({
+export default function SignupForm( {setUser} ) {
+  const [formData, setFormData] = useState({
+    name: "",
+    username: "",
+    email: "",
+    password: "",
+    password_confirmation: "",
+  });
 
-    // });
-    // // const [password, setPassword] = useState("");
-    // // const [passwordConfirmation, setPasswordConfirmation] = useState("");
-    // // const [imageUrl, setImageUrl] = useState("");
-    // // const [bio, setBio] = useState("");
-    // // const [errors, setErrors] = useState([]);
-    // // const [isLoading, setIsLoading] = useState(false);
-  
-     function handleSubmit(e) {
-        e.preventDefault();
-        console.log("Submitting Form...")
-    // //   setErrors([]);
-    // //   setIsLoading(true);
-    // //   fetch("/signup", {
-    // //     method: "POST",
-    // //     headers: {
-    // //       "Content-Type": "application/json",
-    // //     },
-    // //     body: JSON.stringify({
-    // //       username,
-    // //       password,
-    // //       password_confirmation: passwordConfirmation,
-    // //       image_url: imageUrl,
-    // //       bio,
-    // //     }),
-    // //   }).then((r) => {
-    // //     setIsLoading(false);
-    // //     if (r.ok) {
-    // //       r.json().then((user) => onLogin(user));
-    // //     } else {
-    // //       r.json().then((err) => setErrors(err.errors));
-    // //     }
-    // //   });
-    }
-  
-    return (
-      <form onSubmit={handleSubmit}>
-        {/* <div>
-          <Label htmlFor="username">Username</Label>
-          <Input
-            type="text"
-            id="username"
-            autoComplete="off"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-        </div>
-        <div>
-          <Label htmlFor="password">Password</Label>
-          <Input
-            type="password"
-            id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            autoComplete="current-password"
-          />
-        </div>
-        <div>
-          <Label htmlFor="password">Password Confirmation</Label>
-          <Input
-            type="password"
-            id="password_confirmation"
-            value={passwordConfirmation}
-            onChange={(e) => setPasswordConfirmation(e.target.value)}
-            autoComplete="current-password"
-          />
-        </div>
-        <div>
-          <Label htmlFor="imageUrl">Profile Image</Label>
-          <Input
-            type="text"
-            id="imageUrl"
-            value={imageUrl}
-            onChange={(e) => setImageUrl(e.target.value)}
-          />
-        </div>
-        <div>
-          <Label htmlFor="bio">Bio</Label>
-          <Textarea
-            rows="3"
-            id="bio"
-            value={bio}
-            onChange={(e) => setBio(e.target.value)}
-          />
-        </div>
-        <div>
-          <Button type="submit">{isLoading ? "Loading..." : "Sign Up"}</Button>
-        </div>
-        <div>
-          {errors.map((err) => (
-            <Error key={err}>{err}</Error>
-          ))}
-        </div> */}
-      </form>
-    )
-}
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    console.log("Submitting form ...")
+
+    const userCreds = { ...formData };
+
+    fetch("/users", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(userCreds),
+    }).then((res) => {
+      if (res.ok) {
+        res.json().then((user) => {
+          setUser(user);
+        });
+      } else {
+        res.json().then((errors) => {
+          console.error(errors);
+        });
+      }
+    });
+    setFormData({
+        name: "",
+        username: "",
+        email: "",
+        password: "",
+        password_confirmation: "",
+      })
+  }
+
+  return (
+    <form className = "signup-login-form" onSubmit={handleSubmit}>
+      <label htmlFor="name">Name:</label>
+      <input
+        id="name-signup-input"
+        type="text"
+        name="name"
+        value={formData.name}
+        onChange={handleChange}
+      />
+      <label htmlFor="username">Username:</label>
+      <input
+        id="username-signup-input"
+        type="text"
+        name="username"
+        value={formData.username}
+        onChange={handleChange}
+      />
+      <label htmlFor="email">Email:</label>
+      <input
+        id="email-signup-input"
+        type="text"
+        name="email"
+        value={formData.email}
+        onChange={handleChange}
+      />
+      <label htmlFor="password">Password:</label>
+      <input
+        className="password-signup-input"
+        type="password"
+        name="password"
+        value={formData.password}
+        onChange={handleChange}
+      />
+      <label htmlFor="password_confirmation">Confirm Password:</label>
+      <input
+        className="password-signup-input"
+        type="password"
+        name="password_confirmation"
+        value={formData.password_confirmation}
+        onChange={handleChange}
+      />
+      <button type="submit">Sign Up</button>
+    </form>
+  );
+};
