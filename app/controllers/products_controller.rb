@@ -1,10 +1,12 @@
 class ProductsController < ApplicationController
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
     rescue_from ActiveRecord::RecordInvalid, with: :render_invalid
-    before_action :is_authenticated
-    before_action :is_authorised, only: [:create, :update, :destory]
+    # before_action :is_authenticated
+    # before_action :is_authorised, only: [:create, :update, :destory]
 
     def index
+        products = Product.all 
+        render json: products
     end
 
     def show
