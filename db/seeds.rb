@@ -11,17 +11,17 @@ Category.destroy_all
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create(name:Faker::Name.name ,username: Faker::Internet.password(min_length: 6),email: Faker::Internet.email,password:Faker::Internet.password,isAdmin: true )
-User.create(name:Faker::Name.name ,username: Faker::Internet.password(min_length: 6),email: Faker::Internet.email,password:Faker::Internet.password,isAdmin: false)
-User.create(name:Faker::Name.name ,username: Faker::Internet.password(min_length: 6),email: Faker::Internet.email,password:Faker::Internet.password,isAdmin: false)
-User.create(name:Faker::Name.name ,username: Faker::Internet.password(min_length: 6),email: Faker::Internet.email,password:Faker::Internet.password,isAdmin: false)
-User.create(name:Faker::Name.name ,username: Faker::Internet.password(min_length: 6),email: Faker::Internet.email,password:Faker::Internet.password,isAdmin: false)
-User.create(name:Faker::Name.name ,username: Faker::Internet.password(min_length: 6),email: Faker::Internet.email,password:Faker::Internet.password,isAdmin:true )
-User.create(name:Faker::Name.name ,username: Faker::Internet.password(min_length: 6),email: Faker::Internet.email,password:Faker::Internet.password,isAdmin: false)
-User.create(name:Faker::Name.name ,username: Faker::Internet.password(min_length: 6),email: Faker::Internet.email,password:Faker::Internet.password,isAdmin: false)
-User.create(name:Faker::Name.name ,username: Faker::Internet.password(min_length: 6),email: Faker::Internet.email,password:Faker::Internet.password,isAdmin: false)
-User.create(name:Faker::Name.name ,username: Faker::Internet.password(min_length: 6),email: Faker::Internet.email,password:Faker::Internet.password,isAdmin: false)
-User.create(name:Faker::Name.name ,username: Faker::Internet.password(min_length: 6),email: Faker::Internet.email,password:Faker::Internet.password,isAdmin: false)
+User.create(name:"Haarika" ,username: "haarika_r",email: "harry@ymail.com",password:"12345asd",isAdmin:true )
+User.create(name:Faker::Name.name ,username: Faker::Internet.username,email: Faker::Internet.email,password:Faker::Internet.password(min_length: 6),isAdmin: false)
+User.create(name:Faker::Name.name ,username: Faker::Internet.username,email: Faker::Internet.email,password:Faker::Internet.password(min_length: 6),isAdmin: false)
+User.create(name:Faker::Name.name ,username: Faker::Internet.username,email: Faker::Internet.email,password:Faker::Internet.password(min_length: 6),isAdmin: false)
+User.create(name:Faker::Name.name ,username: Faker::Internet.username,email: Faker::Internet.email,password:Faker::Internet.password(min_length: 6),isAdmin: false)
+User.create(name:Faker::Name.name ,username: Faker::Internet.username,email: Faker::Internet.email,password:Faker::Internet.password(min_length: 6),isAdmin:true )
+User.create(name:Faker::Name.name ,username: Faker::Internet.username,email: Faker::Internet.email,password:Faker::Internet.password(min_length: 6),isAdmin: false)
+User.create(name:Faker::Name.name ,username: Faker::Internet.username,email: Faker::Internet.email,password:Faker::Internet.password(min_length: 6),isAdmin: false)
+User.create(name:Faker::Name.name ,username: Faker::Internet.username,email: Faker::Internet.email,password:Faker::Internet.password(min_length: 6),isAdmin: false)
+User.create(name:Faker::Name.name ,username: Faker::Internet.username,email: Faker::Internet.email,password:Faker::Internet.password(min_length: 6),isAdmin: false)
+User.create(name:Faker::Name.name ,username: Faker::Internet.username,email: Faker::Internet.email,password:Faker::Internet.password(min_length: 6),isAdmin: false)
 
 Category.create(category_name: "Vegetables")
 Category.create(category_name: "Spices & Condiments")
@@ -64,11 +64,10 @@ Product.create(name: "Mrs. Meyer's Clean Day Multi-Surface Everyday Cleaner Hone
 Product.create(name: " 100% Recycled Soft & Strong Bath Tissue 12 Pack",category_id:Category.all.sample.id,product_description:"eventh Generation 100% Recycled Paper* Bath Tissue is an extra strong and soft 2-ply toilet paper whitened without chlorine bleach. It?s gentle on the environment, septic-safe and RV-friendly, too.For more than 25 years, Seventh Generation has been thoughtfully formulating safe and effective plant-based products that work. Really well. " ,image:"https://i5.walmartimages.com/asr/be1bc214-4671-425d-8c90-922d698d0d6a_2.9ab1575e8cbe065199012524c72f81f9.jpeg" ,price: 50.99,stock: 3)
 Product.create(name: "Nature's Way Alive! Once Daily ",category_id:Category.all.sample.id ,product_description:"Complete ultra potency daily multivitamin supplement for men. With high potency B-vitamins to help convert food into fuel, including the active form of B-12 and folate.* Supports eye health, bone health, heart health, immune health, muscle function, and energy metabolism.* With food-based powder blends including Daily Greens, Orchard Fruits & Garden Veggies powder blend, Cardio, and Digestive Enzyme. Gluten-free. No artificial colors." ,image:"https://m.media-amazon.com/images/I/71W14GOhB1L._AC_SL1500_.jpg" ,price: 20.99,stock: 1)
 
-
 # 10.times do
 #     product = Product.all.sample
 #     user = User.all.sample
 #     Cart.create(product_id: product.id, user_id: user.id, quantity: rand(1..10))
 # end
-
+ puts "Seeding done....."
 
