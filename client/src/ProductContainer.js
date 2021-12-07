@@ -21,10 +21,11 @@ function ProductContainer(){
         (product) =>
           product.name.toLowerCase().includes(search.toLowerCase())
       ); //to search products
-    return (
+    return (   
         <div>
 
         <Search search={search} setSearch={setSearch}/>
+
             <Switch>
                 <Route exact path = "/products">
                   <ProductView allProducts = {filterProducts} />

@@ -1,6 +1,6 @@
 import React, {useState} from "react"
 
-export default function LoginForm ( {setUser} ) {
+export default function LoginForm ( {setUser, handleFormDisplay} ) {
     const [formData, setFormData] = useState({
         username: "",
         password: "",
@@ -43,26 +43,29 @@ export default function LoginForm ( {setUser} ) {
       }
     
       return (
-        <form className = "signup-login-form" onSubmit={handleSubmit}>
-          
-          <label htmlFor="username">Username:</label>
-          <input
-            id="username-login-input"
-            type="text"
-            name="username"
-            value={formData.username}
-            onChange={handleChange}
-          />
-          <label htmlFor="password">Password:</label>
-          <input
-            id="password-login-input"
-            type="password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-          />
-          <button type="submit">Sign In</button>
-        </form>
+        <div>
+            <form className = "signup-login-form" onSubmit={handleSubmit}>
+            
+            <label htmlFor="username">Username:</label>
+            <input
+                id="username-login-input"
+                type="text"
+                name="username"
+                value={formData.username}
+                onChange={handleChange}
+            />
+            <label htmlFor="password">Password:</label>
+            <input
+                id="password-login-input"
+                type="password"
+                name="password"
+                value={formData.password}
+                onChange={handleChange}
+            />
+            <button type="submit">Sign In</button>
+            </form>
+            <h3>Don't have an account yet? <button onClick = {handleFormDisplay}>Sign Up Now!</button></h3>
+        </div>
       );
 
 }
