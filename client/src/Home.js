@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react"
-import LoginForm from "./LoginForm"
-import SignUpForm from "./SignUpForm"
+import LoginSignUp from "./LoginSignUp"
 import ProductContainer from "./ProductContainer"
 import Header from "./Header"
 import NavBar from "./NavBar"
@@ -8,6 +7,7 @@ import NavBar from "./NavBar"
 
 export default function Login () {
     const [user, setUser] = useState(null)
+    // const [hideForm, setHideForm] = useState(false)
 
     useEffect(()=> {
         fetch("/me")
@@ -17,15 +17,15 @@ export default function Login () {
               })
     }, [])
 
+    if (!user) return <LoginSignUp setUser = {setUser} />
+
     return(
         <div>
-            <Header />
-            <LoginForm setUser = {setUser}/>
-            <SignUpForm setUser = {setUser}/>
+            <Header setUser = {setUser}/>
             <NavBar/>
             {
                 user ? 
-                <ProductContainer user = {user}/> : null
+                <ProductContainer user = {user}/> : <LoginSignUp setUser = {setUser} />
             }
         </div>
     )

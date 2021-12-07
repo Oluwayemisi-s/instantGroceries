@@ -17,9 +17,7 @@ function ProductContainer(){
           .then((data) => setProducts(data));
       }, []);
     return (
-        <div>
-
-            
+        <div>    
             <Switch>
                 <Route exact path = "/products">
                   <ProductView allProducts = {allProducts} />

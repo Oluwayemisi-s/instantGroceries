@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function SignupForm( {setUser} ) {
+export default function SignupForm( {setUser, handleFormDisplay} ) {
   const [formData, setFormData] = useState({
     name: "",
     username: "",
@@ -49,48 +49,51 @@ export default function SignupForm( {setUser} ) {
   }
 
   return (
-    <form className = "signup-login-form" onSubmit={handleSubmit}>
-      <label htmlFor="name">Name:</label>
-      <input
-        id="name-signup-input"
-        type="text"
-        name="name"
-        value={formData.name}
-        onChange={handleChange}
-      />
-      <label htmlFor="username">Username:</label>
-      <input
-        id="username-signup-input"
-        type="text"
-        name="username"
-        value={formData.username}
-        onChange={handleChange}
-      />
-      <label htmlFor="email">Email:</label>
-      <input
-        id="email-signup-input"
-        type="text"
-        name="email"
-        value={formData.email}
-        onChange={handleChange}
-      />
-      <label htmlFor="password">Password:</label>
-      <input
-        className="password-signup-input"
-        type="password"
-        name="password"
-        value={formData.password}
-        onChange={handleChange}
-      />
-      <label htmlFor="password_confirmation">Confirm Password:</label>
-      <input
-        className="password-signup-input"
-        type="password"
-        name="password_confirmation"
-        value={formData.password_confirmation}
-        onChange={handleChange}
-      />
-      <button type="submit">Sign Up</button>
-    </form>
+     <div>
+        <form className = "signup-login-form" onSubmit={handleSubmit}>
+        <label htmlFor="name">Name:</label>
+        <input
+            id="name-signup-input"
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+        />
+        <label htmlFor="username">Username:</label>
+        <input
+            id="username-signup-input"
+            type="text"
+            name="username"
+            value={formData.username}
+            onChange={handleChange}
+        />
+        <label htmlFor="email">Email:</label>
+        <input
+            id="email-signup-input"
+            type="text"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+        />
+        <label htmlFor="password">Password:</label>
+        <input
+            className="password-signup-input"
+            type="password"
+            name="password"
+            value={formData.password}
+            onChange={handleChange}
+        />
+        <label htmlFor="password_confirmation">Confirm Password:</label>
+        <input
+            className="password-signup-input"
+            type="password"
+            name="password_confirmation"
+            value={formData.password_confirmation}
+            onChange={handleChange}
+        />
+        <button type="submit">Sign Up</button>
+        </form>
+        <h3>Already have an account? <button onClick = {handleFormDisplay}>Log In Now!</button></h3>
+    </div> 
   );
 };
