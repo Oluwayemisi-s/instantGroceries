@@ -16,8 +16,9 @@ class ProductsController < ApplicationController
     end
 
     def create
+        byebug
         product = Product.create!(product_params)
-        render json: product, status: :created
+        render json: product, status: :created    
     end
 
     def destroy
@@ -25,7 +26,7 @@ class ProductsController < ApplicationController
 
     private
     def product_params
-        params.permit(:name, :product_description, :image, :price, :stock)
+        params.permit(:name, :product_description, :category_id, :image, :price, :stock)
     end
 
 end

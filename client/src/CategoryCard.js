@@ -1,9 +1,7 @@
 function CategoryCard({category: {category_name}}){
     return(
         <div>
-           <li>
-               <h3>{category_name}</h3>
-           </li>
+            <h3>{category_name}</h3>
         </div>
     )
 }

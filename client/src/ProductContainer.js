@@ -21,6 +21,7 @@ function ProductContainer(){
         (product) =>
           product.name.toLowerCase().includes(search.toLowerCase())
       ); //to search products
+      
     return (   
         <div>
 

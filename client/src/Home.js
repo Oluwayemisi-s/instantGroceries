@@ -21,7 +21,7 @@ export default function Login () {
 
     return(
         <div>
-            <Header setUser = {setUser}/>
+            <Header user = {user} setUser = {setUser}/>
             <NavBar/>
             {
                 user ? 
