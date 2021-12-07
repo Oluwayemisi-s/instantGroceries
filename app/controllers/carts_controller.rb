@@ -4,12 +4,15 @@ class CartsController < ApplicationController
     rescue_from ActiveRecord::RecordInvalid, with: :render_invalid
 
     def create
-        user = @current_user
-        cart_item = user.carts.create!(cart_params)
+        # user = @current_user
+        cart_item = Cart.create!(cart_params)
         render json: cart_item, status: :created
     end
     
-    def index
+    def show
+        user = User.find_by_id(session[:user_id])
+        cart_items = user.carts
+        render json: cart_items, status: :ok
     end
 
     def destroy
@@ -21,7 +24,7 @@ class CartsController < ApplicationController
     private
 
     def cart_params
-        params.permit(:product_id, :quantity)
+        params.permit(:user_id, :product_id, :quantity)
     end
 
 end
