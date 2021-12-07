@@ -14,9 +14,8 @@ function ProductContainer(){
       }, []);
     return (
         <div>
-          <Header />
-         <ProductView allProducts = {allProducts}/>
-
+            <Header />
+            <ProductView allProducts = {allProducts}/>
         </div>
     )
 }
