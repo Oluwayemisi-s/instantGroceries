@@ -2,6 +2,10 @@
 import React, { useState, useEffect } from "react"
 import ProductView from "./ProductView";
 import Header from "./Header"
+import { Switch,Route } from "react-router-dom";
+import Category from "./Category";
+import AddNewProduct from "./AddNewProduct";
+import Cart from "./Cart";
 
 function ProductContainer(){
 
@@ -14,8 +18,23 @@ function ProductContainer(){
       }, []);
     return (
         <div>
-            <Header />
-            <ProductView allProducts = {allProducts}/>
+
+            
+            <Switch>
+                <Route exact path = "/products">
+                  <ProductView allProducts = {allProducts} />
+                </Route>
+                <Route exact path = "/categories">
+                  <Category />
+                </Route>
+                <Route path = "/addnewproduct">
+                  <AddNewProduct />
+                </Route>
+                <Route path = "/cart">
+                  <Cart />
+                </Route>
+            </Switch>
+
         </div>
     )
 }
