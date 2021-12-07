@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import Error from "./Errors";
 
 export default function SignupForm( {setUser, handleFormDisplay} ) {
-  const [formData, setFormData] = useState({
+    const [errors, setErrors] = useState([]);
+    const [formData, setFormData] = useState({
     name: "",
     username: "",
     email: "",
@@ -34,11 +36,11 @@ export default function SignupForm( {setUser, handleFormDisplay} ) {
           setUser(user);
         });
       } else {
-        res.json().then((errors) => {
-          console.error(errors);
-        });
+        res.json()
+        .then((err) => (err.errors));
       }
     });
+
     setFormData({
         name: "",
         username: "",
@@ -53,6 +55,9 @@ export default function SignupForm( {setUser, handleFormDisplay} ) {
         <form className = "signup-login-form" onSubmit={handleSubmit}>
         <fieldset>
         <legend>Sign up for an account:</legend>
+
+        {errors.map((err) => (<Error key={err}>{err}</Error>))}
+
             <label htmlFor="name">Name:</label>
             <input
                 id="name-signup-input"

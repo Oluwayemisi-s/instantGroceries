@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-
+import Error from "./Errors";
 
 function AddNewProduct(){
-    const [formData, setFormData] = useState({
+  const [errors, setErrors] = useState([])  
+  const [formData, setFormData] = useState({
         name: "",
         category_id: "",
         product_description: "",
@@ -46,8 +47,8 @@ function AddNewProduct(){
               console.log(data);
             });
           } else {
-            res.json().then((errors) => {
-              console.error(errors);
+            res.json().then((err) => {
+              setErrors(err.errors);
             });
           }
         });
@@ -68,6 +69,9 @@ function AddNewProduct(){
             <form className = "signup-login-form" onSubmit={handleSubmit}>
                 <fieldset>
                 <legend>Enter Product Details:</legend>
+
+                {errors.map((err) => (<Error key={err}>{err}</Error>))}
+
                 <label htmlFor="name:">Product Name:</label>
                 <input
                     id="product-name"
@@ -103,6 +107,7 @@ function AddNewProduct(){
                 <br/>
 
                 <label htmlFor="image">Image Url:</label>
+                
                 <input
                     id="product-image"
                     type="text"
