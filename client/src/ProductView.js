@@ -1,24 +1,17 @@
 
 import React, { useState } from "react"
 import ProductCard from "./ProductCard"
-function ProductView({allProducts}){
+import Search from "./Search";
+function ProductView({allProducts,search,setSearch}){
     const displayProduct = allProducts.map((product) => {
         return <ProductCard key={product.id} product={product} />;
       });
     return (
         <div>
+             <Search search={search} setSearch={setSearch} /> 
          {displayProduct}
         </div>
     )
 }
 
 export default ProductView;
-
-// // const displayProduct = allProducts.map((product) => {
-//     return <ProductView key={product.id} product={product} />;
-// });
-// return (
-//   <div>
-//      {displayProduct}
-//   </div>
-// )
