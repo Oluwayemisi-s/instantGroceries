@@ -18,6 +18,8 @@ function ProductContainer(){
       }, []);
     return (
         <div>
+
+            
             <Switch>
                 <Route exact path = "/products">
                   <ProductView allProducts = {allProducts} />
@@ -32,6 +34,7 @@ function ProductContainer(){
                   <Cart />
                 </Route>
             </Switch>
+
         </div>
     )
 }
