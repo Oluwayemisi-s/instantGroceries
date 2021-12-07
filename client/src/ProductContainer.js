@@ -7,7 +7,7 @@ import AddNewProduct from "./AddNewProduct";
 import Cart from "./Cart";
 import Search from "./Search";
 
-function ProductContainer(){
+function ProductContainer({user}){
 
     const [allProducts, setProducts] = useState([]);
     const [search, setSearch] = useState("");
@@ -29,7 +29,7 @@ function ProductContainer(){
         <div>
             <Switch>
                 <Route exact path = "/products">
-                  <ProductView allProducts = {filterProducts} search={search} setSearch = {setSearch} />
+                  <ProductView allProducts = {filterProducts} search={search} setSearch = {setSearch} user = {user}/>
                 </Route>
                 <Route exact path = "/categories">
                   <Category />
