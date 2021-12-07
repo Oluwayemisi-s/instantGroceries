@@ -10,6 +10,8 @@ class ProductsController < ApplicationController
     end
 
     def show
+        # products = Product.find(params[:id])
+        # render json: products, status: :ok, serializer: CategoryShowSerializer
     end
 
     def update

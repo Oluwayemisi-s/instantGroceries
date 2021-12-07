@@ -9,7 +9,8 @@ class CategoriesController < ApplicationController
 
     def show
         category = Category.find(params[:id])
-        render json: category, status: :ok, serializer: CategoryShowSerializer
+        # render json: category, status: :ok, serializer: CategoryShowSerializer
+        render json: category.products, status: :ok
     end
 
     def create

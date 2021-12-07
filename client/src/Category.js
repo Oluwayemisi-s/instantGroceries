@@ -3,6 +3,7 @@ import CategoryView from "./CategoryView";
 function Category(){
 
     const [allCategories, setCategories] = useState([]);
+    //const [search, setSearch] = useState("");
     useEffect(() => {
         fetch("/categories")
           .then((res) => res.json())
@@ -10,7 +11,7 @@ function Category(){
       }, []);
     return(
         <div>
-           <CategoryView allCategories={allCategories}/>
+           <CategoryView allCategories={allCategories} />
         </div>
     )
 }

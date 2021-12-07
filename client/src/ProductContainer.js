@@ -11,25 +11,25 @@ function ProductContainer(){
 
     const [allProducts, setProducts] = useState([]);
     const [search, setSearch] = useState("");
+   
     useEffect(() => {
         fetch("/products")
           .then((res) => res.json())
           .then((data) => setProducts(data));
       }, []);
 
+      
+
       const filterProducts = allProducts.filter(
         (product) =>
-          product.name.toLowerCase().includes(search.toLowerCase())
+          product.name.toLowerCase().includes(search.toLowerCase()) 
       ); //to search products
       
     return (   
         <div>
-
-        <Search search={search} setSearch={setSearch}/>
-
             <Switch>
                 <Route exact path = "/products">
-                  <ProductView allProducts = {filterProducts} />
+                  <ProductView allProducts = {filterProducts} search={search} setSearch = {setSearch} />
                 </Route>
                 <Route exact path = "/categories">
                   <Category />
