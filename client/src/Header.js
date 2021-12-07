@@ -1,5 +1,5 @@
 
-export default function Header ( {setUser} ) {
+export default function Header ( {user, setUser} ) {
 
     function handleLogout(){
         console.log("Logging out")
@@ -13,7 +13,8 @@ export default function Header ( {setUser} ) {
     return(
         <div>
             <h1>Welcome to your favorite grocery store!</h1>
-            <button onClick = {handleLogout}>Logout!</button>
+            {user ? <button onClick = {handleLogout}>Logout!</button> : null}
+            <hr></hr>
         </div>
     )
 

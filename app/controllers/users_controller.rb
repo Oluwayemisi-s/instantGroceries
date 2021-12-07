@@ -18,7 +18,7 @@ class UsersController < ApplicationController
         if user
             render json: user, status: :ok
         else
-            render json: "Login to continue", status: :unauthorized
+            render json: {errors: ["Login to continue"]}, status: :unauthorized
         end
     end
 

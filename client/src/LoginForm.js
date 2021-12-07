@@ -45,7 +45,8 @@ export default function LoginForm ( {setUser, handleFormDisplay} ) {
       return (
         <div>
             <form className = "signup-login-form" onSubmit={handleSubmit}>
-            
+            <fieldset>
+            <legend>Log into your account:</legend>
             <label htmlFor="username">Username:</label>
             <input
                 id="username-login-input"
@@ -54,6 +55,7 @@ export default function LoginForm ( {setUser, handleFormDisplay} ) {
                 value={formData.username}
                 onChange={handleChange}
             />
+            <br/>
             <label htmlFor="password">Password:</label>
             <input
                 id="password-login-input"
@@ -62,7 +64,9 @@ export default function LoginForm ( {setUser, handleFormDisplay} ) {
                 value={formData.password}
                 onChange={handleChange}
             />
+             <br/>
             <button type="submit">Sign In</button>
+            </fieldset>
             </form>
             <h3>Don't have an account yet? <button onClick = {handleFormDisplay}>Sign Up Now!</button></h3>
         </div>
