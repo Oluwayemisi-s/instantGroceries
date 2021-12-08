@@ -35,7 +35,7 @@ function AddNewProduct(){
         const newProduct = { ...formData };
         console.log(newProduct)
     
-        fetch("/products", {
+        fetch("/products/", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
