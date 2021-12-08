@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react'
 import CartItem from './CartItem'
+import ProductView from './ProductView'
 
 function Cart(){
     const [carts, setCarts] = useState([])
     const [isLoading, setIsLoading] = useState(true)
-    const [cartTotal,setCartTotal] = useState(0)
+   
 
     useEffect(() => {
         fetch("/cartitems")
@@ -15,7 +16,9 @@ function Cart(){
     }, [])
 
     if (isLoading) return <div>Page is loading</div>
-    
+  
+    if(carts.length === 0) return <h3>No Items in Cart</h3> 
+
     const name = carts[0].user.name
 
     let totalAmount = 0
@@ -27,7 +30,7 @@ function Cart(){
        setCarts(filteredCart)
     }
 
-    const cart_item = carts.map(item => <CartItem key = {item.id} item = {item} onDelete={onDelete} setCartTotal= {setCartTotal}/>)
+    const cart_item = carts.map(item => <CartItem key = {item.id} item = {item} onDelete={onDelete} />)
 
     return (
         <div>

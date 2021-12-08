@@ -83,7 +83,7 @@ function ProductCard({product, user}){
                 <option value="9">9</option>
                 <option value="10">10</option>
             </select>
-            <button onClick = {handleAddToCart}>Add To Cart</button>
+            <button onClick = {handleAddToCart}>{product.stock > 0 ? "Add To Cart" : "Out of Stock"}</button>
         </div>
     )
 }
