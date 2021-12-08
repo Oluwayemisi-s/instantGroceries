@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Error from "./Errors";
 
-function AddNewProduct(){
+function AddNewProduct({user}){
   const [errors, setErrors] = useState([])  
   const [formData, setFormData] = useState({
         name: "",

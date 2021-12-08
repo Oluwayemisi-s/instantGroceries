@@ -1,6 +1,6 @@
 import { useState } from "react"
 import ProductView from "./ProductView";
-function CategoryCard({category}){
+function CategoryCard({category, user}){
     
     const [showProducts, setshowProducts ] = useState(false)
     const [productsInCategory,setProductInCategory] = useState([])
@@ -12,15 +12,16 @@ function CategoryCard({category}){
           .then((res) => res.json())
           .then((data) => {
               setProductInCategory(data)
+              console.log(data)
             });
       }
+
      return(
         <div>
             <h3  onClick = {handleClick}>{category.category_name}</h3>
             {showProducts ? 
-                <ProductView allProducts =  {productsInCategory}/>: null
+                <ProductView allProducts = {productsInCategory} user = {user}/>: null
             }
-
         </div>
     )
 }

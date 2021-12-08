@@ -1,8 +1,10 @@
 import CategoryCard from "./CategoryCard";
 // import Search from "./Search";
-function CategoryView({allCategories}){
+
+function CategoryView({allCategories, user}){
+  
     const displayCategory = allCategories.map((category) => {
-        return <CategoryCard key={category.id} category={category} />;
+        return <CategoryCard key={category.id} category={category} user = {user}/>;
       });
 
     return (
