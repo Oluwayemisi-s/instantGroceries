@@ -71,7 +71,7 @@ function ProductCard({product, user}){
             <h4>In Stock:{product.stock}</h4>
             <label htmlFor="Qty">Qty:</label>
             <select onChange = {handleChange} name="quantity" id="quantity" required>
-                <option disabled value="">select</option>
+                <option value="">select</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -83,7 +83,7 @@ function ProductCard({product, user}){
                 <option value="9">9</option>
                 <option value="10">10</option>
             </select>
-            <button onClick = {handleAddToCart}>Add To Cart</button>
+            <button onClick = {handleAddToCart}>{product.stock > 0 ? "Add To Cart" : "Out of Stock"}</button>
         </div>
     )
 }

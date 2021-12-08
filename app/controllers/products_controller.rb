@@ -21,7 +21,6 @@ class ProductsController < ApplicationController
     end
 
     def create
-        byebug
         product = Product.create!(product_params)
         render json: product, status: :created    
     end
