@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 
 function ProductCard({product, user}){   
-    //console.log(user)
+    
     const [errors, setErrors] = useState([])
     
     const [cartItem, setCartItem] = useState({
@@ -20,7 +20,7 @@ function ProductCard({product, user}){
         console.log(cartItem)
         const newStock = product.stock - cartItem.quantity
         if (cartItem.quantity > product.stock){
-
+            return "Quantity is more than what is available in stock"
         } else {
         fetch("/carts", {
             method: "POST",

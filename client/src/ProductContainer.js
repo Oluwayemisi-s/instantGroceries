@@ -32,13 +32,13 @@ function ProductContainer({user}){
                   <ProductView allProducts = {filterProducts} search={search} setSearch = {setSearch} user = {user}/>
                 </Route>
                 <Route exact path = "/categories">
-                  <Category />
+                  <Category user = {user}/>
                 </Route>
                 <Route path = "/addnewproduct">
-                  <AddNewProduct />
+                  <AddNewProduct user = {user}/>
                 </Route>
                 <Route path = "/cart">
-                  <Cart />
+                  <Cart user = {user}/>
                 </Route>
             </Switch>
           

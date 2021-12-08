@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react"
 import CategoryView from "./CategoryView";
-function Category(){
+
+
+function Category({user}){
 
     const [allCategories, setCategories] = useState([]);
     //const [search, setSearch] = useState("");
@@ -9,9 +11,10 @@ function Category(){
           .then((res) => res.json())
           .then((data) => setCategories(data));
       }, []);
+
     return(
         <div>
-           <CategoryView allCategories={allCategories} />
+           <CategoryView allCategories={allCategories} user = {user} />
         </div>
     )
 }
