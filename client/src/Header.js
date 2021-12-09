@@ -14,7 +14,7 @@ export default function Header ( {user, setUser, count, setCount} ) {
 
     return(
         <div>
-            <h1>Welcome to your favorite grocery store!</h1>
+            <h1>Welcome to Instant Grocery Shop!</h1>
             {user ? <button onClick = {handleLogout}>Logout!</button> : null}
             <h3> 🛒 {count}</h3>
             <hr></hr>

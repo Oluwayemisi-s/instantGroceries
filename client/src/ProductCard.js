@@ -69,7 +69,8 @@ function ProductCard({product, user, setCount, onDelete}){
       };
     
     return (
-        <div>
+      <div class="card-form">
+        <div class="card-form-group">
           {errors.map((err) => (<Error key={err}>{err}</Error>))}
             <img src = {product.image} alt = "product" width = "200px"/>
             <h3>{product.name}</h3>
@@ -96,6 +97,7 @@ function ProductCard({product, user, setCount, onDelete}){
             <button onClick = {handleAddToCart}>{product.stock > 0 ? "Add 🛒" : "Out of Stock"}</button>
             <br/>
             <button onClick = {handleDelete}>Delete Product</button>
+        </div>
         </div>
     )
 }
