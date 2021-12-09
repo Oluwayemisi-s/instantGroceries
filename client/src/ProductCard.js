@@ -1,5 +1,6 @@
 
 import React, { useState } from "react";
+import Error from "./Errors";
 
 function ProductCard({product, user}){   
     
@@ -16,9 +17,8 @@ function ProductCard({product, user}){
     }
  
     function handleAddToCart(){
-        console.log("adding...")
-        console.log(cartItem)
-        const newStock = product.stock - cartItem.quantity
+        
+        // const newStock = product.stock - cartItem.quantity
         if (cartItem.quantity > product.stock){
             return "Quantity is more than what is available in stock"
         } else {
@@ -38,29 +38,13 @@ function ProductCard({product, user}){
                 setErrors(err.errors);
               });
             }
-          })};
-
-          fetch(`/products/${product.id}`, {
-            method: "PATCH",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({...product, stock: newStock}),
-          }).then((res) => {
-            if (res.ok) {
-              res.json().then((data) => {
-                console.log("Updated");
-              });
-            } else {
-              res.json().then((err) => {
-                setErrors(err.errors);
-                console.log(err.errors)
-              });
-            }
-          })};
+          })
+        }
+      };
     
     return (
         <div>
+          {errors.map((err) => (<Error key={err}>{err}</Error>))}
             <img src = {product.image} alt = "product" width = "200px"/>
             <h3>{product.name}</h3>
             <details>

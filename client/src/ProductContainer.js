@@ -9,16 +9,15 @@ import Search from "./Search";
 
 function ProductContainer({user}){
 
-    const [allProducts, setProducts] = useState([]);
+    const [allProducts, setAllProducts] = useState([]);
     const [search, setSearch] = useState("");
    
     useEffect(() => {
         fetch("/products")
           .then((res) => res.json())
-          .then((data) => setProducts(data));
+          .then((data) => setAllProducts(data));
       }, []);
 
-      
 
       const filterProducts = allProducts.filter(
         (product) =>
@@ -27,12 +26,13 @@ function ProductContainer({user}){
       
     return (   
         <div>
+          <Search search={search} setSearch={setSearch} /> 
             <Switch>
                 <Route exact path = "/products">
                   <ProductView allProducts = {filterProducts} search={search} setSearch = {setSearch} user = {user}/>
                 </Route>
                 <Route exact path = "/categories">
-                  <Category user = {user}/>
+                  <Category user = {user} search={search} setSearch={setSearch}/>
                 </Route>
                 <Route path = "/addnewproduct">
                   <AddNewProduct user = {user}/>
@@ -41,7 +41,6 @@ function ProductContainer({user}){
                   <Cart user = {user}/>
                 </Route>
             </Switch>
-          
         </div>
     )
 }

@@ -1,8 +1,8 @@
 class ProductsController < ApplicationController
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
-    rescue_from ActiveRecord::RecordInvalid, with: :render_invalid
+    rescue_from ActiveRecord::RecordInvalid, with: :record_invalid
     # before_action :is_authenticated
-    # before_action :is_authorised, only: [:create, :update, :destory]
+    #before_action :is_authorised, only: [:create, :update, :destory]
 
     def index
         products = Product.all 
@@ -10,8 +10,8 @@ class ProductsController < ApplicationController
     end
 
     def show
-        # products = Product.find(params[:id])
-        # render json: products, status: :ok, serializer: CategoryShowSerializer
+        products = Product.find(params[:id])
+        render json: products, status: :ok
     end
 
     def update
@@ -20,12 +20,16 @@ class ProductsController < ApplicationController
         render json: product, status: :ok
     end
 
-    def create
+    def create   
         product = Product.create!(product_params)
-        render json: product, status: :created    
+        render json: product, status: :created  
+        byebug 
     end
 
     def destroy
+        product = Product.find(params[:id])
+        product.destroy
+        render json: {}, status: :ok
     end
 
     private

@@ -33,7 +33,6 @@ function AddNewProduct({user}){
         console.log("Submitting form ...")
     
         const newProduct = { ...formData };
-        console.log(newProduct)
     
         fetch("/products/", {
           method: "POST",
