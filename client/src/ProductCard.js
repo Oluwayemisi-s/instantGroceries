@@ -93,7 +93,7 @@ function ProductCard({product, user, setCount, onDelete}){
                 <option value="9">9</option>
                 <option value="10">10</option>
             </select>
-            <button onClick = {handleAddToCart}>{product.stock > 0 ? "Add To Cart" : "Out of Stock"}</button>
+            <button onClick = {handleAddToCart}>{product.stock > 0 ? "Add 🛒" : "Out of Stock"}</button>
             <br/>
             <button onClick = {handleDelete}>Delete Product</button>
         </div>

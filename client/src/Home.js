@@ -31,7 +31,7 @@ export default function Login () {
 
     return(
         <div>
-            <Header user = {user} setUser = {setUser} count = {count}/>
+            <Header user = {user} setUser = {setUser} setCount = {setCount} count = {count}/>
             <NavBar count = {count}/>
             {
                 user ? 
