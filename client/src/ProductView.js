@@ -2,6 +2,7 @@
 import React from "react"
 import ProductCard from "./ProductCard"
 
+
 function ProductView({allProducts, user, setCount, setAllProducts}){
 
     function onDelete (deleted){
@@ -14,8 +15,11 @@ function ProductView({allProducts, user, setCount, setAllProducts}){
       });
 
     return (
-        <div>
+        <div className="product-display">
+           
          {displayProduct}
+        
+        
         </div>
     )
 }
