@@ -37,7 +37,7 @@ export default function SignupForm( {setUser, handleFormDisplay} ) {
         });
       } else {
         res.json()
-        .then((err) => (err.errors));
+        .then((err) => setErrors(err.errors));
       }
     });
 
