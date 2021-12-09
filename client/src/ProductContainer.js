@@ -29,7 +29,7 @@ function ProductContainer({user, setCount}){
           <Search search={search} setSearch={setSearch} /> 
             <Switch>
                 <Route exact path = "/products">
-                  <ProductView allProducts = {filterProducts} search={search} setSearch = {setSearch} setCount = {setCount} user = {user}/>
+                  <ProductView allProducts = {filterProducts} search={search} setSearch = {setSearch} setCount = {setCount} user = {user} setAllProducts = {setAllProducts}/>
                 </Route>
                 <Route exact path = "/categories">
                   <Category user = {user} search={search} setSearch={setSearch} setCount = {setCount}/>
@@ -41,6 +41,8 @@ function ProductContainer({user, setCount}){
                   <Cart user = {user} setCount = {setCount}/>
                 </Route>
             </Switch>
+            <hr/>
+            <footer>Your number 1 online grocery store!</footer>
         </div>
     )
 }
