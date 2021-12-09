@@ -1,5 +1,7 @@
+//import { useState } from "react"
+//import Cart from "./Cart"
 
-export default function Header ( {user, setUser} ) {
+export default function Header ( {user, setUser, count, setCount} ) {
 
     function handleLogout(){
         console.log("Logging out")
@@ -14,6 +16,7 @@ export default function Header ( {user, setUser} ) {
         <div>
             <h1>Welcome to your favorite grocery store!</h1>
             {user ? <button onClick = {handleLogout}>Logout!</button> : null}
+            <h3> 🛒 {count}</h3>
             <hr></hr>
         </div>
     )

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import CartItem from './CartItem'
 import Checkout from './Checkout'
 
-function Cart(){
+function Cart({setCount}){
     const [carts, setCarts] = useState([])
     const [isLoading, setIsLoading] = useState(true)
     const [product, setProduct] = useState({})
@@ -19,12 +19,12 @@ function Cart(){
 
     if (isLoading) return <div>Page is loading</div>
   
-    if(carts.length === 0) return <h3>No Items in Cart</h3> 
+    if(carts.length === 0) return <h3>No Items currently in cart.<br/> Navigate to products or categories page to add..</h3> 
 
     const name = carts[0].user.name
+    // const cartCount = carts.lenght
 
     let totalAmount = 0
-
     carts.forEach(cart => {
         totalAmount += cart.quantity * cart.product.price
     })
@@ -39,8 +39,8 @@ function Cart(){
             console.log(item)
             fetch(`/products/${item.product.id}`)
             .then(resp => resp.json())
-            .then (product => {
-                setProduct(product)
+            .then (data => {
+                setProduct(data)
                 fetch(`/products/${item.product.id}`, {
                     method: "PATCH",
                     headers: {
@@ -61,13 +61,21 @@ function Cart(){
                 }) 
                 fetch(`/carts/${item.id}`, {
                     method: "DELETE"
-                }).then (console.log("item has been deleted"))   
+                }).then (data => {
+                    console.log("item has been deleted")
+                    fetch("/cartitems")
+                    .then((res) => res.json())
+                    .then((data) => {
+                    console.log(data.length)
+                    setCount(data.length) 
+                });
+                })   
             })     
         });
         setCheckout(true)
     }
 
-    const cart_item = carts.map(item => <CartItem key = {item.id} item = {item} onDelete={onDelete} />)
+    const cart_item = carts.map(item => <CartItem key = {item.id} item = {item} onDelete={onDelete} setCount = {setCount}/>)
 
     return (
         <div>
