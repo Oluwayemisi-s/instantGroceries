@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Error from "./Errors";
 
-function ProductCard({product, user}){   
+function ProductCard({product, user, setCount}){   
     
     const [errors, setErrors] = useState([])
     
@@ -32,6 +32,12 @@ function ProductCard({product, user}){
             if (res.ok) {
               res.json().then((data) => {
                 console.log("Posted");
+                fetch("/cartitems")
+                .then((res) => res.json())
+                .then((data) => {
+                console.log(data.length)
+                setCount(data.length) 
+              });
               });
             } else {
               res.json().then((err) => {
@@ -39,6 +45,7 @@ function ProductCard({product, user}){
               });
             }
           })
+        
         }
       };
     

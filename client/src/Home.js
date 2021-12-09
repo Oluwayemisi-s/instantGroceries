@@ -7,7 +7,7 @@ import NavBar from "./NavBar"
 
 export default function Login () {
     const [user, setUser] = useState(null)
-    // const [hideForm, setHideForm] = useState(false)
+    const [count, setCount] = useState(0)
 
     useEffect(()=> {
         fetch("/me")
@@ -17,15 +17,25 @@ export default function Login () {
               })
     }, [])
 
+    useEffect(() => {
+        fetch("/cartitems")
+        .then((res) => res.json())
+        .then((data) => {
+            console.log(data.length)
+            setCount(data.length) 
+      });
+    }, [])
+
     if (!user) return <LoginSignUp setUser = {setUser} />
+
 
     return(
         <div>
-            <Header user = {user} setUser = {setUser}/>
-            <NavBar/>
+            <Header user = {user} setUser = {setUser} count = {count}/>
+            <NavBar count = {count}/>
             {
                 user ? 
-                <ProductContainer user = {user}/> : <LoginSignUp setUser = {setUser} />
+                <ProductContainer user = {user} setCount = {setCount}/> : <LoginSignUp setUser = {setUser} />
             }
         </div>
     )

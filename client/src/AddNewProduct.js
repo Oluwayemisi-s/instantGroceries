@@ -44,6 +44,14 @@ function AddNewProduct({user}){
           if (res.ok) {
             res.json().then((data) => {
               console.log(data);
+              setFormData({
+                name: "",
+                category_id: "",
+                product_description: "",
+                image: "",
+                price: "",
+                stock: ""
+              })
             });
           } else {
             res.json().then((err) => {
@@ -51,14 +59,6 @@ function AddNewProduct({user}){
             });
           }
         });
-        setFormData({
-            name: "",
-            category_id: "",
-            product_description: "",
-            image: "",
-            price: "",
-            stock: ""
-          })
       }
 
     const options = categories.map(category => <option key = {category.id} value={category.id}>{category.category_name}</option>)

@@ -1,6 +1,6 @@
 
 
-export default function CartItem ({item, onDelete,setCartTotal}) {
+export default function CartItem ({item, onDelete, setCount}) {
 
     function handleCartDelete(){
         fetch(`/carts/${item.id}`, {
@@ -12,6 +12,12 @@ export default function CartItem ({item, onDelete,setCartTotal}) {
           .then(() => {
                 console.log("Deleted")
                 onDelete(item)
+                fetch("/cartitems")
+                    .then((res) => res.json())
+                    .then((data) => {
+                    console.log(data.length)
+                    setCount(data.length) 
+                  })
               });
         
           };
