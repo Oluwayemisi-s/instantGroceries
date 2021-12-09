@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Error from "./Errors";
 
-function ProductCard({product, user}){   
+function ProductCard({product, user, setCount, onDelete}){   
     
     const [errors, setErrors] = useState([])
     
@@ -14,6 +14,25 @@ function ProductCard({product, user}){
 
     function handleChange(e){
         setCartItem({...cartItem, [e.target.name]: e.target.value})    
+    }
+
+    function handleDelete(){
+      
+      fetch(`/products/${product.id}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        }
+      })
+      .then (res => {
+        if (res.ok){
+          onDelete(product)
+        } else {
+          res.json().then((err) => {
+            setErrors(err.errors);
+          });
+        }
+      })
     }
  
     function handleAddToCart(){
@@ -32,6 +51,12 @@ function ProductCard({product, user}){
             if (res.ok) {
               res.json().then((data) => {
                 console.log("Posted");
+                fetch("/cartitems")
+                .then((res) => res.json())
+                .then((data) => {
+                console.log(data.length)
+                setCount(data.length) 
+              });
               });
             } else {
               res.json().then((err) => {
@@ -39,6 +64,7 @@ function ProductCard({product, user}){
               });
             }
           })
+        
         }
       };
     
@@ -49,11 +75,11 @@ function ProductCard({product, user}){
             <img src = {product.image} alt = "product" width = "200px"/>
             <h3>{product.name}</h3>
             <details>
-                <summary>Details</summary>
+                <summary>Product details</summary>
                 <small>{product.product_description}</small>
             </details>
-            <h4>Price:${product.price}</h4>
-            <h4>In Stock:{product.stock}</h4>
+            <h5>Price:${product.price}</h5>
+            <h5>In Stock:{product.stock}</h5>
             <label htmlFor="Qty">Qty:</label>
             <select onChange = {handleChange} name="quantity" id="quantity" required>
                 <option value="">select</option>
@@ -68,7 +94,9 @@ function ProductCard({product, user}){
                 <option value="9">9</option>
                 <option value="10">10</option>
             </select>
-            <button onClick = {handleAddToCart}>{product.stock > 0 ? "Add To Cart" : "Out of Stock"}</button>
+            <button onClick = {handleAddToCart}>{product.stock > 0 ? "Add 🛒" : "Out of Stock"}</button>
+            <br/>
+            <button onClick = {handleDelete}>Delete Product</button>
         </div>
         </div>
     )

@@ -7,7 +7,7 @@ import AddNewProduct from "./AddNewProduct";
 import Cart from "./Cart";
 import Search from "./Search";
 
-function ProductContainer({user}){
+function ProductContainer({user, setCount}){
 
     const [allProducts, setAllProducts] = useState([]);
     const [search, setSearch] = useState("");
@@ -29,18 +29,20 @@ function ProductContainer({user}){
           <Search search={search} setSearch={setSearch} /> 
             <Switch>
                 <Route exact path = "/products">
-                  <ProductView allProducts = {filterProducts} search={search} setSearch = {setSearch} user = {user}/>
+                  <ProductView allProducts = {filterProducts} search={search} setSearch = {setSearch} setCount = {setCount} user = {user} setAllProducts = {setAllProducts}/>
                 </Route>
                 <Route exact path = "/categories">
-                  <Category user = {user} search={search} setSearch={setSearch}/>
+                  <Category user = {user} search={search} setSearch={setSearch} setCount = {setCount}/>
                 </Route>
                 <Route path = "/addnewproduct">
                   <AddNewProduct user = {user}/>
                 </Route>
                 <Route path = "/cart">
-                  <Cart user = {user}/>
+                  <Cart user = {user} setCount = {setCount}/>
                 </Route>
             </Switch>
+            <hr/>
+            <footer>Your number 1 online grocery store!</footer>
         </div>
     )
 }

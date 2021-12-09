@@ -2,7 +2,9 @@ import React, { useEffect, useState } from "react";
 import Error from "./Errors";
 
 function AddNewProduct({user}){
-  const [errors, setErrors] = useState([])  
+  const [errors, setErrors] = useState([]) 
+  const [categories, setCategories] = useState([]) 
+  //const [currentProducts, setCurrentProducts] = useState([])
   const [formData, setFormData] = useState({
         name: "",
         category_id: "",
@@ -11,7 +13,6 @@ function AddNewProduct({user}){
         price: "",
         stock: ""
       });
-    const [categories, setCategories] = useState([])
 
     useEffect(() => {
         fetch("/categories")
@@ -33,7 +34,26 @@ function AddNewProduct({user}){
         console.log("Submitting form ...")
     
         const newProduct = { ...formData };
-    
+        // fetch("/products")
+        // .then (resp => resp.json())
+        // .then (data => {
+        //   setCurrentProducts(data)
+        //   currentProducts.forEach(element => {
+        //     if(element.name === newProduct.name){
+        //       fetch(`/products/${element.id}`,{
+        //         method: "PATCH",
+        //         headers: {"Content-Type" : "application/json"},
+        //         body: JSON.stringify({...element, stock: element.stock + newProduct.stock})
+        //       })
+        //       .then (resp => resp.json())
+        //       .then (data => {
+        //         console.log(data)
+        //         console.log("product patched!")
+        //       })
+        //     }  
+        //   });  
+        // })
+
         fetch("/products/", {
           method: "POST",
           headers: {
@@ -44,6 +64,16 @@ function AddNewProduct({user}){
           if (res.ok) {
             res.json().then((data) => {
               console.log(data);
+              alert("New product has been added")
+              setFormData({
+                name: "",
+                category_id: "",
+                product_description: "",
+                image: "",
+                price: "",
+                stock: ""
+              })
+              setErrors([])
             });
           } else {
             res.json().then((err) => {
@@ -51,14 +81,6 @@ function AddNewProduct({user}){
             });
           }
         });
-        setFormData({
-            name: "",
-            category_id: "",
-            product_description: "",
-            image: "",
-            price: "",
-            stock: ""
-          })
       }
 
     const options = categories.map(category => <option key = {category.id} value={category.id}>{category.category_name}</option>)

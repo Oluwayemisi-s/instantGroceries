@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
     rescue_from ActiveRecord::RecordInvalid, with: :record_invalid
     # before_action :is_authenticated
-    #before_action :is_authorised, only: [:create, :update, :destory]
+    before_action :is_authorised, only: [:create, :update, :destory]
 
     def index
         products = Product.all 
@@ -23,7 +23,6 @@ class ProductsController < ApplicationController
     def create   
         product = Product.create!(product_params)
         render json: product, status: :created  
-        byebug 
     end
 
     def destroy

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import CategoryView from "./CategoryView";
 
 
-function Category({user, search, setSearch}){
+function Category({user, search, setSearch, setCount}){
 
     const [allCategories, setCategories] = useState([]);
     //const [search, setSearch] = useState("");
@@ -17,7 +17,7 @@ function Category({user, search, setSearch}){
 
     return(
         <div>
-           <CategoryView allCategories={allCategories} user = {user} search={search} setSearch={setSearch}/>
+           <CategoryView allCategories={allCategories} user = {user} search={search} setSearch={setSearch} setCount = {setCount}/>
         </div>
     )
 }

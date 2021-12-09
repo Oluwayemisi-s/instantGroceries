@@ -34,6 +34,13 @@ export default function SignupForm( {setUser, handleFormDisplay} ) {
       if (res.ok) {
         res.json().then((user) => {
           setUser(user);
+          setFormData({
+            name: "",
+            username: "",
+            email: "",
+            password: "",
+            password_confirmation: "",
+          })
         });
       } else {
         res.json()
@@ -41,13 +48,6 @@ export default function SignupForm( {setUser, handleFormDisplay} ) {
       }
     });
 
-    setFormData({
-        name: "",
-        username: "",
-        email: "",
-        password: "",
-        password_confirmation: "",
-      })
   }
 
   return (

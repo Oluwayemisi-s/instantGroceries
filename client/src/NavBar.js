@@ -1,7 +1,8 @@
 
+
 import { NavLink } from "react-router-dom"
 import styled from "styled-components";
-function NavBar(){
+function NavBar({count}){
 return(
     <div>
      <ul>
@@ -16,7 +17,7 @@ return(
         <TestNavLinkStyle to = "/addnewproduct"> Add New Product</TestNavLinkStyle >
         </StyledLinks>
         <StyledLinks>
-        <TestNavLinkStyle to = "/cart"> Cart </TestNavLinkStyle > 
+        <TestNavLinkStyle to =/cart">🛒 {count} > Cart </TestNavLinkStyle > 
         </StyledLinks>
         </StyledNavContainer>
      </ul>
