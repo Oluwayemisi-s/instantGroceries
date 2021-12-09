@@ -30,7 +30,7 @@ export default function Login () {
 
 
     return(
-        <div>
+        <div className="home">
             <Header user = {user} setUser = {setUser} setCount = {setCount} count = {count}/>
             <NavBar count = {count}/>
             {

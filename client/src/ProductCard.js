@@ -1,7 +1,6 @@
 
 import React, { useState } from "react";
 import Error from "./Errors";
-
 function ProductCard({product, user, setCount, onDelete}){   
     
     const [errors, setErrors] = useState([])
@@ -69,15 +68,16 @@ function ProductCard({product, user, setCount, onDelete}){
       };
     
     return (
-      <div class="card-form">
-        <div class="card-form-group">
+      
+        <div class="product-card">
+      
           {errors.map((err) => (<Error key={err}>{err}</Error>))}
-            <img src = {product.image} alt = "product" width = "200px"/>
+            <img src = {product.image} alt = "product" width="200px"/>
             <h3>{product.name}</h3>
             <details>
                 <summary>Product details</summary>
                 <small>{product.product_description}</small>
-            </details>
+            </details> 
             <h5>Price:${product.price}</h5>
             <h5>In Stock:{product.stock}</h5>
             <label htmlFor="Qty">Qty:</label>
@@ -93,11 +93,10 @@ function ProductCard({product, user, setCount, onDelete}){
                 <option value="8">8</option>
                 <option value="9">9</option>
                 <option value="10">10</option>
-            </select>
+            </select><br/>
             <button onClick = {handleAddToCart}>{product.stock > 0 ? "Add 🛒" : "Out of Stock"}</button>
             <br/>
             <button onClick = {handleDelete}>Delete Product</button>
-        </div>
         </div>
     )
 }

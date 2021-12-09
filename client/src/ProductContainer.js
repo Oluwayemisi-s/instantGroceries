@@ -25,7 +25,7 @@ function ProductContainer({user, setCount}){
       ); //to search products
       
     return (   
-        <div>
+        <div className = "product-container">
           <Search search={search} setSearch={setSearch} /> 
             <Switch>
                 <Route exact path = "/products">

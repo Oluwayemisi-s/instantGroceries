@@ -1,30 +1,39 @@
-.App {
+body {
   text-align: center;
+   background-image: url("https://images.unsplash.com/photo-1532467411038-57680e3dc0f1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
+  /* background-color: grey; */
+  /* background-repeat: repeat; */
+  background-size: auto;
+  margin:0%
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
+input {
+  margin: 4px;
+  height: 2em;
+  width: 20em;
 }
 
 .dissappear {
   display: none;
 }
+
+.navbar ul{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      font-family: "Zen Antique", serif;
+      justify-content: center;
+      font-size: 2em;
+      justify-content: space-around;
+      margin: 100px; 
+      margin-top: 10px;
+      margin-bottom: 25px;
+     /* margin-left: 20px;
+     margin-right: 20px; */
+      font-family: "Zen Antique", serif;
+      text-decoration:none;
+}
+
 
 .signup-login-form{
   border: 5px outset #0c0c0a; ;
@@ -33,18 +42,18 @@
     flex-wrap: center;
     padding: 7px 0px;
     margin: 36px 10px 50px 50px;
-    word-break: 10px;
     font-family: "Lucida Console", "Courier New", monospace;
     font-size: 20px;
     text-align: center;
     padding: 14px 20px;
     border: 5px outset #050503; ;
     border-radius: 10px;
+    
 } 
- input[type=text], label {
+ .signup-login-form [type=text] {
   border-radius: 6px;
   border: 1px solid transparent;
-  border-color: #dbdbdb;
+  /* border-color: #dbdbdb; */
   -webkit-appearance: none;
   width: 25%;
   font-size: 1rem;
@@ -52,16 +61,14 @@
   padding: 4px;
   display: inline-flex;
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 2em;
   margin-bottom: 8px;
 }
-input[type=password], label {
+.signup-login-form [type=password] {
 
   border-radius: 6px;
   border: 1px solid transparent;
-  border-color: #dbdbdb;
-  -webkit-appearance: none;
-  
+  /* border-color: #dbdbdb; */
   width: 25%;
   font-size: 1rem;
   line-height: 1.5;
@@ -78,37 +85,39 @@ input[type=password], label {
   width: fit-content;
   font-family: "Zen Antique", serif;
 } 
-img{
+.product-card img{
+  display: block;
   justify-content: center;
-  /* border: 5px outset #050503; ;
-  border-radius: 10px; */
+  margin-left: auto;
+  margin-right: auto;
+  width : 100%;
   
 }
 
-/* .cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: auto;
-  grid-gap: 1rem;
-   
-  } */
-   
-   
-  .card-form-group
-  {
-    display: grid;
-    padding: 14px 20px;
-    margin: 20px 5px 50px 10px;
-    border: 5px outset #050503; ;
-    border-radius: 20px;
-    font-family: "Lucida Console", "Courier New", monospace;
-    font-size: 20px;
-    word-spacing: 5px;
-    text-align: center;
-  }
-  .card-form {
+.product-display{
     display: flex;
-    align-items: flex-end;
-    flex-wrap: wrap;
-    align-content: space-around;
-    }
+    flex-direction: row;
+    flex-wrap: wrap; 
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+  .product-card
+  {
+    display: flex;
+    width: 25%;
+    /* height: 700px; */
+    flex-direction: column;
+    align-items: center; 
+    padding: 5px 5px;
+    justify-content: center;
+    margin: 36px 10px 50px 50px;
+    border: 5px outset #050503; 
+    border-radius: 20px; 
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-size: 20px; 
+    /* text-align:justify;  */
+    background-color: white;
+
+   }
+  
