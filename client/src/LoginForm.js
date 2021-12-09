@@ -1,6 +1,7 @@
 import React, {useState} from "react"
 import Error from "./Errors";
 
+
 export default function LoginForm ( {setUser, handleFormDisplay} ) {
     const [errors, setErrors] = useState([]);
     const [formData, setFormData] = useState({
@@ -46,8 +47,9 @@ export default function LoginForm ( {setUser, handleFormDisplay} ) {
     
       return (
         <div>
+        
             <form className = "signup-login-form" onSubmit={handleSubmit}>
-            <fieldset>
+            {/* <fieldset> */}
             <legend>Log into your account:</legend>
 
             {errors.map((err) => (<Error key={err}>{err}</Error>))}
@@ -70,11 +72,16 @@ export default function LoginForm ( {setUser, handleFormDisplay} ) {
                 onChange={handleChange}
             />
              <br/>
-            <button type="submit">Sign In</button>
-            </fieldset>
-            </form>
+            <button type="submit">Sign In</button><br></br>
+            {/* </fieldset> */}
             <h3>Don't have an account yet? <button onClick = {handleFormDisplay}>Sign Up Now!</button></h3>
+            </form>
         </div>
       );
 
 }
+
+
+
+
+

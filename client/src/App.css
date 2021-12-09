@@ -26,4 +26,89 @@
   display: none;
 }
 
+.signup-login-form{
+  border: 5px outset #0c0c0a; ;
+    color: rgb(7, 4, 7);
+    text-align: center;
+    flex-wrap: center;
+    padding: 7px 0px;
+    margin: 36px 10px 50px 50px;
+    word-break: 10px;
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-size: 20px;
+    text-align: center;
+    padding: 14px 20px;
+    border: 5px outset #050503; ;
+    border-radius: 10px;
+} 
+ input[type=text], label {
+  border-radius: 6px;
+  border: 1px solid transparent;
+  border-color: #dbdbdb;
+  -webkit-appearance: none;
+  width: 25%;
+  font-size: 1rem;
+  line-height: 1.5;
+  padding: 4px;
+  display: inline-flex;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+input[type=password], label {
 
+  border-radius: 6px;
+  border: 1px solid transparent;
+  border-color: #dbdbdb;
+  -webkit-appearance: none;
+  
+  width: 25%;
+  font-size: 1rem;
+  line-height: 1.5;
+  padding: 4px;
+  
+  display: inline-flex;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.button {
+  top: 40px;
+  bottom: 40px;
+  width: fit-content;
+  font-family: "Zen Antique", serif;
+} 
+img{
+  justify-content: center;
+  /* border: 5px outset #050503; ;
+  border-radius: 10px; */
+  
+}
+
+/* .cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: auto;
+  grid-gap: 1rem;
+   
+  } */
+   
+   
+  .card-form-group
+  {
+    display: grid;
+    padding: 14px 20px;
+    margin: 20px 5px 50px 10px;
+    border: 5px outset #050503; ;
+    border-radius: 20px;
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-size: 20px;
+    word-spacing: 5px;
+    text-align: center;
+  }
+  .card-form {
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    align-content: space-around;
+    }

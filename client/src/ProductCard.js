@@ -43,7 +43,8 @@ function ProductCard({product, user}){
       };
     
     return (
-        <div>
+      <div class="card-form">
+        <div class="card-form-group">
           {errors.map((err) => (<Error key={err}>{err}</Error>))}
             <img src = {product.image} alt = "product" width = "200px"/>
             <h3>{product.name}</h3>
@@ -68,6 +69,7 @@ function ProductCard({product, user}){
                 <option value="10">10</option>
             </select>
             <button onClick = {handleAddToCart}>{product.stock > 0 ? "Add To Cart" : "Out of Stock"}</button>
+        </div>
         </div>
     )
 }
