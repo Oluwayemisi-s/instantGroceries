@@ -1,6 +1,4 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
-
 body {
   text-align: center;
    background-image: url("https://media.istockphoto.com/photos/healthy-eating-background-picture-id515856750?k=20&m=515856750&s=612x612&w=0&h=qQGIvssqNOjJsOTBJ5oeSn2bls94L9tUi5OnRAg0cbU=");
@@ -8,9 +6,8 @@ body {
   background-size: 100%;
   margin:0%
 }
-
 button {
-  background-color: #db9dc4; 
+  background-color: #DB9DC4;
   border: none;
   border-radius: 8px;
   color: black;
@@ -28,20 +25,17 @@ button {
 }
 button:hover {
   border: 2px solid rgb(225, 199, 174);
-    overflow: hidden; 
+    overflow: hidden;
 }
-
 input {
   margin: 0px;
   height: 2em;
-  width: 20em; 
+  width: 20em;
   display: inline-block;
 }
-
 input[type=text] {
   font-family: 'Merriweather', serif;
 }
-
 select {
   margin: 4px;
   height: 3em;
@@ -49,9 +43,8 @@ select {
   border-radius: 4px;
   font-family: 'Merriweather', serif;
 }
-
 .signup-login-form label{
-  justify-content: center; 
+  justify-content: center;
   display: block;
 }
 .header {
@@ -61,39 +54,35 @@ select {
   flex-direction: column;
   font-size: 2.5em;
   background-color: rgb(247, 240, 240, .70);
-  color: #cd1d8c;
+  color: #CD1D8C;
 }
-
 .header .inside-header {
   display:flex;
   width: 100%;
   justify-content: center;
-  font-size: 1.5em; 
+  font-size: 1.5em;
 }
-
 h6 {
   margin-left: 20px;
   margin-right: 30px;
 }
-
 .search {
   font-size: 1.75em;
   font-weight: bolder;
   margin-top: 2px solid black;
-  color: #cd1d8c
+  color: #CD1D8C
 }
 .search input{
   font-size: 1em;
-  border: 2px solid #db9dc4;
+  border: 2px solid #DB9DC4;
   border-radius: 7px;
   margin: 4px;
   height: 1.5em;
   width: 10em;
 }
-
 .signup-login-form input {
   font-size: 1em;
-  border: 2px solid #db9dc4;
+  border: 2px solid #DB9DC4;
   border-radius: 7px;
   padding: 12px 20px;
   margin-left: 5px;
@@ -102,11 +91,9 @@ h6 {
   border-radius: 4px;
   box-sizing: border-box;
 }
-
 .dissappear {
   display: none;
 }
-
 .navbar {
   background-color: rgb(247, 240, 240, .70);
   margin: auto;
@@ -115,7 +102,6 @@ h6 {
   padding-bottom: 2px;
   height: 7%;
 }
-
 .navbar ul{
     display: flex;
     flex-direction: row;
@@ -126,17 +112,15 @@ h6 {
       justify-content: space-around;
       font-family: "Zen Antique", serif;
 }
-
 .navbar ul a {
   text-decoration:none;
-  color: #cd1d8c;
+  color: #CD1D8C;
   font-family: 'Merriweather', serif;
   font-weight: bolder;
 }
-
 .signup-login-form{
     display: inline-block;
-    color: rgb(7, 4, 7); 
+    color: rgb(7, 4, 7);
     text-align: center;
     padding: 7px 0px;
     margin: 0 auto;
@@ -147,60 +131,52 @@ h6 {
     padding: 14px 20px;
     width:75%;
     justify-content: center;
-} 
-
+}
 .button {
   top: 40px;
   bottom: 40px;
   width: fit-content;
   font-family: "Zen Antique", serif;
-} 
+}
 .product-card img{
   display: block;
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
   width : 100%;
-  
 }
-
 .product-display{
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
     margin-top: 5px;
     margin-bottom: 5px;
 }
-
   .product-card {
     display: flex;
     width: 25%;
     flex-direction: column;
-    align-items: center; 
+    align-items: center;
     justify-content: center;
     margin: 36px 10px 50px 50px;
     font-family: 'Merriweather', serif;
-    font-size: 20px; 
+    font-size: 20px;
     background-color: rgb(247, 240, 240, .90);
     border-radius: 15px;
     padding: 10px;
     box-shadow:20px 20px 40px rgb(225, 199, 174);
    }
-
    .product-card select {
     width: 5em;
    }
-
    .product-card:hover {
     border: 5px solid rgb(247, 240, 240, .90);
-    overflow: hidden;  
+    overflow: hidden;
    }
-
    .cart-container h2 {
-    color: #cd1d8c;
+    color: #CD1D8C;
     font-size: 2em;
    }
-
    .cart-item {
      display:flex;
      flex-direction: row;
@@ -214,26 +190,22 @@ h6 {
      margin-top: 10px;
      margin-bottom: 10px;
    }
-
    .cart-item button {
      height: 50%;
      margin-top: 35px;
    }
-
    .inside-cart-item {
      display: flex;
      flex-direction: column;
      align-self: center;
    }
-
    .category {
      display: flex;
      align-items: centre;
      flex-direction: row;
      flex-wrap: wrap;
-     margin-left: 15%;  
+     margin-left: 15%;
    }
-  
    .category-card {
       color: rgb(67, 100, 16);
       /* border: 2px solid black; */
@@ -249,8 +221,7 @@ h6 {
      font-size: 1.5em;
      box-shadow:20px 20px 40px rgb(225, 199, 174);
    }
-
    .category-card:hover {
     border: 5px solid rgb(247, 240, 240, .90);
-    overflow: hidden; 
+    overflow: hidden;
    }
