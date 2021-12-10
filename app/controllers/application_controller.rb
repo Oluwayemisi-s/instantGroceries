@@ -8,11 +8,11 @@ class ApplicationController < ActionController::API
   end
 
   def is_authorised
-    render json: {errors: ["You are not authorized to perform this action"]}, status: :forbidden unless current_user.isAdmin
+    render json: {errors: ["You are not authorized to perform this action", "You need to be an Admin"]}, status: :forbidden unless current_user.isAdmin
   end
 
   def is_authenticated
-    render json: {errors: ["You are not authorized to perform this action"]}, status: :forbidden unless current_user
+    render json: {errors: ["You are currently not logged in", "Login to your account to continue"]}, status: :forbidden unless current_user
   end
 
   def render_not_found

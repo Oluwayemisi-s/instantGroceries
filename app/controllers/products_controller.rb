@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
     rescue_from ActiveRecord::RecordInvalid, with: :record_invalid
-    # before_action :is_authenticated
+    before_action :is_authenticated
     before_action :is_authorised, only: [:create]
 
     def index

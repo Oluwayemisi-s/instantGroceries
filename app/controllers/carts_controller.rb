@@ -1,5 +1,5 @@
 class CartsController < ApplicationController
-    # before_action :is_authenticated
+    before_action :is_authenticated
     # before_action :current_user, only: [:create]
     rescue_from ActiveRecord::RecordInvalid, with: :record_invalid
 

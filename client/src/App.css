@@ -34,8 +34,11 @@ button:hover {
 input {
   margin: 4px;
   height: 2em;
-  width: 20em;
-  
+  width: 20em; 
+}
+
+input[type=text] {
+  font-family: 'Merriweather', serif;
 }
 
 select {
@@ -43,6 +46,7 @@ select {
   height: 3em;
   width: 10em;
   border-radius: 4px;
+  font-family: 'Merriweather', serif;
 }
 
 .header {
@@ -57,11 +61,8 @@ select {
 
 .header .inside-header {
   display:flex;
-  /* flex-direction:row-reverse; */
   width: 100%;
   justify-content: center;
-  /* margin-left: 20px;
-  margin-right: 20px; */
   font-size: 1.5em; 
 }
 
@@ -125,24 +126,16 @@ h6 {
   font-weight: bolder;
 }
 
-
 .signup-login-form{
-  /* border: 5px outset #0c0c0a; ; */
     color: rgb(7, 4, 7);
     text-align: center;
-    /* flex-wrap: center; */
     padding: 7px 0px;
-    /* margin-left: 5px; */
-    /* margin: 36px 10px 50px 50px; */
     font-family: 'Merriweather', serif;
     font-size: 20px;
     text-align: center;
     padding: 14px 20px;
     width:75%;
     justify-content: center;
-    /* border: 5px outset #050503; ; */
-    /* border-radius: 10px; */
-    
 } 
 
 .button {
@@ -175,13 +168,10 @@ h6 {
     align-items: center; 
     justify-content: center;
     margin: 36px 10px 50px 50px;
-    font-family: "Lucida Console", "Courier New", monospace;
+    font-family: 'Merriweather', serif;
     font-size: 20px; 
-    /* text-align:justify;  */
     background-color: rgb(247, 240, 240, .90);
     border-radius: 15px;
-    /* border: 1px solid #db9dc4; */
-    /* border-style: ridge; */
     padding: 10px;
     box-shadow:20px 20px 40px rgb(225, 199, 174);
    }
@@ -212,7 +202,6 @@ h6 {
      padding-top: 25px;
      margin-top: 10px;
      margin-bottom: 10px;
-     /* padding-bottom: 10px; */
    }
 
    .cart-item button {
@@ -231,8 +220,7 @@ h6 {
      align-items: centre;
      flex-direction: row;
      flex-wrap: wrap;
-     margin-left: 15%;
-     
+     margin-left: 15%;  
    }
   
    .category-card {
