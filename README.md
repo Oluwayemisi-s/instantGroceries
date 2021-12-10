@@ -1,327 +1,68 @@
-# Project Template: React/Rails API
+# Project Title: 
+    The Instant Grocery Store - Flatiron Software Engineering Phase Four Project
 
-## Description
 
-This project is scaffolded so that you can build a React frontend and Rails
-backend together, and easily deploy them to Heroku.
+# Project Owners: 
+    1. Haarika Ramadugu
+        - GitHub userName: Haarika701
+    2. Oluwayemisi Soremekun 
+        - GitHub userName: Oluwayemisi-s
 
-## Requirements
+# Reason for the project: 
+    This project was built as a requirment to completing the fourth phase of our software engineering course at Flatiron school (class of 09/21). It's main aim is to apply and showcase the knowledge and skills we have acquired from the beginning of our bootcamp up to this point. These skills are demonstrated in our use of JavaScript and React functional components - this encompasses using React states to manage and manipulate dynamically changing events on the DOM, setting and using controlled forms and persisting data to a backend server. We also demostrated our skill of building a server side application to manage and communicate with our frontend using ruby on rails to manage a PostgreSQL database, define restful and non-restful routes, manage authentication and authorizations and validating data received from our frontend. Finally, we demostrated our knowledge and skill with CSS to design our web application, amongst others.
 
-- Ruby 2.7.4
-- NodeJS (v16), and npm
-- Heroku CLI
-- Postgresql
+# Motivation for the project: 
+    Over the last year or two, and with covid raging, online shopping has been one of the most vital industries that people have had no choice but to resort to. More importantly, some online shops have begun to offer almost instant delieveries on purchased products, further adding to the immense convenience online shopping provides.
 
-See Environment Setup below for instructions on installing these tools if you
-don't already have them.
+    With this boost in the industry, my partner and i felt the need to apply our aquired knowledge to create an online store, specifically targeted to sell groceries. 
 
-## Setup
+    We were greatly inspired by instacart and some instant grocery stores. Eventhough we are unable to match the functionality level and efficiency of instacart, we have replicated some of their basic features into our own custom application. 
 
-Start by **cloning** (not forking) the project template repository and removing
-the remote:
+  # Technologies Used
 
-```console
-$ git clone git@github.com:learn-co-curriculum/project-template-react-rails-api.git your-project-name
-$ cd your-project-name
-$ git remote rm origin
-```
+    For this poject, we incorporated the use of several technologies as were needed to achieve our functioning app.  Highlighted below are the main technologies that were used for this project:
 
-Then, [create a new remote repository][create repo] on GitHub. Head to
-[github.com](https://github.com) and click the **+** icon in the top-right
-corner and follow the steps to create a new repository. **Important**: don't
-check any of the options such as 'Add a README file', 'Add a .gitignore file',
-etc — since you're importing an existing repository, creating any of those files
-on GitHub will cause issues.
+      1. Ruby on rails
+      2. PostgreSQL
+      3. React
+      4. HTML/JSX
+      5. ActiveRecord
+      6. CSS
+      
 
-[create repo]: https://docs.github.com/en/github/importing-your-projects-to-github/importing-source-code-to-github/adding-an-existing-project-to-github-using-the-command-line#adding-a-project-to-github-without-github-cli
+# Project Description: 
+   The instant grocery shop was designed to be able to sign up and new user, or sign in an existing user after which an authenticated user is shown the variety of grocery options that we have available in the store and a list of items that have been previously added to cart - if any. A signed in user can browse all products, browse by all categories available or search for a particular product. Each selected product can be added to the cart (after selecting a quantity). The carts display a list of all products that has been added and a total price for items in the cart. Cart items can be deleted if the user wishes to. Once chekout is clicked, stock value of all checked out products are adjusted on the database and the user is shown a page that promises that items will be delievered within a specific time frame.
 
-If you're working with a partner,
-[add them as a collaborator][add collaborator] on GitHub. From your repo on
-GitHub, go to Settings > Manage Access > Invite a collaborator and enter your
-partner's username. Once your partner has access, they should git **clone** (not
-fork) the repository.
+# Learnings and Struggles:
+   While this project looked simple at the start of it, we realised while building it that there were a lot of tiny details that went into every online store around that makes them function optimally and remain user friendly. We struggled with making this app as user friendly as possible and trying to make sure we caught all the little details that are required to make a basic and functional online shop. 
 
-[add collaborator]: https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-user-account/managing-access-to-your-personal-repositories/inviting-collaborators-to-a-personal-repository
+    Goals for Future Iterations:
+    - A better flow for the authorization and authentication process
+    - Ability of a user to edit their info afte signing up
+    - An admin's ability to edit a product already added by stock, price, name or description
+    - The ability to add the same item to cart more than once without it duplicating in the cart but adjusting the quantity in the cart
+    - Fix some known bugs
 
-Finally, connect the GitHub remote repository to your local repository and push
-up your code:
+    Known Bugs: 
+    - if not logged in, navbar should not be display and navlinks should not work. They currently display and work if the exact link/path is typed in the browser
 
-```console
-$ git remote add origin git@github.com:your-username/your-project-name.git
-$ git push -u origin main
-```
+# Acknowledgments:
+    This project was accomplished with the help of the many various resources provided by Flatiron Bootcamp, including our instructor who supported us whenever we hit a roadblock. 
 
-When you're ready to start building your project, run:
+# The Team/Collaborators
 
-```sh
-bundle install
-rails db:create
-npm install --prefix client
-```
+This project was a collective effort between:
 
-You can use the following commands to run the application:
+**Oluwayemisi Soremekun**
 
-- `rails s`: run the backend on [http://localhost:3000](http://localhost:3000)
-- `npm start --prefix client`: run the frontend on
-  [http://localhost:4000](http://localhost:4000)
+*Instagram*: www.instagram.com/oluwayemisi_s/
 
-Make sure to also update this README to include documentation about
-your project. Here's a list of some [awesome readmes][] for inspiration.
+*Email*: oluwayemisi.soremekun@gmail.com
 
-[awesome readmes]: https://github.com/matiassingers/awesome-readme
+*Youtube*: www.youtube.com/channel/UCOMU9_StCtTTqnwSr_Jlvvw
 
-## Deploying
+**Haarika Ramadugu **
 
-This application has all the starter code needed to help you deploy your
-application to Heroku. It's recommended to deploy your project early and push up
-changes often to ensure that your code works equally well in production and
-development environments.
+*Instagram*: https://www.instagram.com/
 
-If you've already set up your environment to deploy to Heroku, you can run the
-commands below to deploy your application. If not, make sure to check out the
-Environment Setup section below.
 
-To deploy, first log in to your Heroku account using the Heroku CLI:
-
-```sh
-heroku login
-```
-
-Create the new Heroku app:
-
-```sh
-heroku create my-app-name
-```
-
-Add the buildpacks for Heroku to build the React app on Node and run the Rails
-app on Ruby:
-
-```sh
-heroku buildpacks:add heroku/nodejs --index 1
-heroku buildpacks:add heroku/ruby --index 2
-```
-
-To deploy, commit your code and push the changes to Heroku:
-
-```sh
-git add .
-git commit -m 'Commit message'
-git push heroku main
-```
-
-> Note: depending on your Git configuration, your default branch might be named
-> `master` or `main`. You can verify which by running
-> `git branch --show-current`. If it's `master`, you'll need to run
-> `git push heroku master` instead.
-
-Any time you have changes to deploy, just make sure your changes are committed
-on the main branch of your repo, and push those changes to Heroku to deploy
-them.
-
-You can view your deployed app with:
-
-```sh
-heroku open
-```
-
-## Environment Setup
-
-### Install the Latest Ruby Version
-
-Verify which version of Ruby you're running by entering this in the terminal:
-
-```sh
-ruby -v
-```
-
-Make sure that the Ruby version you're running is listed in the [supported
-runtimes][] by Heroku. At the time of writing, supported versions are 2.6.8,
-2.7.4, or 3.0.2. Our recommendation is 2.7.4, but make sure to check the site
-for the latest supported versions.
-
-If it's not, you can use `rvm` to install a newer version of Ruby:
-
-```sh
-rvm install 2.7.4 --default
-```
-
-You should also install the latest versions of `bundler` and `rails`:
-
-```sh
-gem install bundler
-gem install rails
-```
-
-[supported runtimes]: https://devcenter.heroku.com/articles/ruby-support#supported-runtimes
-
-### Install NodeJS
-
-Verify you are running a recent version of Node with:
-
-```sh
-node -v
-```
-
-If your Node version is not 16.x.x, install it and set it as the current and
-default version with:
-
-```sh
-nvm install 16
-nvm use 16
-nvm alias default 16
-```
-
-You can also update your npm version with:
-
-```sh
-npm i -g npm
-```
-
-### Sign Up for a [Heroku Account][heroku signup]
-
-You can sign up at for a free account at
-[https://signup.heroku.com/devcenter][heroku signup].
-
-### Download the [Heroku CLI][heroku cli] Application
-
-Download the Heroku CLI. For OSX users, you can use Homebrew:
-
-```sh
-brew tap heroku/brew && brew install heroku
-```
-
-For WSL users, run this command in the Ubuntu terminal:
-
-```sh
-curl https://cli-assets.heroku.com/install.sh | sh
-```
-
-If you run into issues installing, check out the [Heroku CLI][heroku cli]
-downloads page for more options.
-
-After downloading, you can login via the CLI in the terminal:
-
-```sh
-heroku login
-```
-
-This will open a browser window to log you into your Heroku account. After
-logging in, close the browser window and return to the terminal. You can run
-`heroku whoami` in the terminal to verify that you have logged in successfully.
-
-[heroku signup]: https://signup.heroku.com/devcenter
-[heroku cli]: https://devcenter.heroku.com/articles/heroku-cli#download-and-install
-
-### Install Postgresql
-
-Heroku requires that you use PostgreSQL for your database instead of SQLite.
-PostgreSQL (or just Postgres for short) is an advanced database management
-system with more features than SQLite. If you don't already have it installed,
-you'll need to set it up.
-
-#### PostgreSQL Installation for WSL
-
-To install Postgres for WSL, run the following commands from your Ubuntu terminal:
-
-```sh
-sudo apt update
-sudo apt install postgresql postgresql-contrib
-```
-
-Then confirm that Postgres was installed successfully:
-
-```sh
-psql --version
-```
-
-Run this command to start the Postgres service:
-
-```sh
-sudo service postgresql start
-```
-
-Finally, you'll also need to create a database user so that you are able to
-connect to the database from Rails. First, check what your operating system
-username is:
-
-```sh
-whoami
-```
-
-If your username is "ian", for example, you'd need to create a Postgres user
-with that same name. To do so, run this command to open the Postgres CLI:
-
-```sh
-sudo -u postgres -i
-```
-
-From the Postgres CLI, run this command (replacing "ian" with your username):
-
-```sh
-createuser -sr ian
-```
-
-Then enter `control + d` or type `logout` to exit.
-
-[This guide][postgresql wsl] has more info on setting up Postgres on WSL if you
-get stuck.
-
-[postgresql wsl]: https://docs.microsoft.com/en-us/windows/wsl/tutorials/wsl-database#install-postgresql
-
-#### Postgresql Installation for OSX
-
-To install Postgres for OSX, you can use Homebrew:
-
-```sh
-brew install postgresql
-```
-
-Once Postgres has been installed, run this command to start the Postgres
-service:
-
-```sh
-brew services start postgresql
-```
-
-## Troubleshooting
-
-If you ran into any errors along the way, here are some things you can try to
-troubleshoot:
-
-- If you're on a Mac and got a server connection error when you tried to run
-  `rails db:create`, one option for solving this problem for Mac users is to
-  install the Postgres app. To do this, first uninstall `postgresql` by running
-  `brew remove postgresql`. Next, download the app from the
-  [Postgres downloads page][postgres downloads page] and install it. Launch the
-  app and click "Initialize" to create a new server. You should now be able to
-  run `rails db:create`.
-
-- If you're using WSL and got the following error running `rails db:create`:
-
-  ```txt
-  PG::ConnectionBad: FATAL:  role "yourusername" does not exist
-  ```
-
-  The issue is that you did not create a role in Postgres for the default user
-  account. Check [this video](https://www.youtube.com/watch?v=bQC5izDzOgE) for
-  one possible fix.
-
-- If your app failed to deploy at the build stage, make sure your local
-  environment is set up correctly by following the steps at the beginning of
-  this lesson. Check that you have the latest versions of Ruby and Bundler, and
-  ensure that Postgresql was installed successfully.
-
-- If you deployed successfully, but you ran into issues when you visited the
-  site, make sure you migrated and seeded the database. Also, make sure that
-  your application works locally and try to debug any issues on your local
-  machine before re-deploying. You can also check the logs on the server by
-  running `heroku logs`.
-
-For additional support, check out these guides on Heroku:
-
-- [Deploying a Rails 6 App to Heroku][heroku rails deploying guide]
-- [Rails Troubleshooting on Heroku][troubleshooting guide on heroku]
-
-[postgres downloads page]: https://postgresapp.com/downloads.html
-[heroku rails deploying guide]: https://devcenter.heroku.com/articles/getting-started-with-rails6
-[troubleshooting guide on heroku]: https://devcenter.heroku.com/articles/getting-started-with-rails6#troubleshooting

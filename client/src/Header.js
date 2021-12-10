@@ -1,7 +1,7 @@
 //import { useState } from "react"
 //import Cart from "./Cart"
 
-export default function Header ( {user, setUser, count} ) {
+export default function Header ( {user, setUser} ) {
 
     function handleLogout(){
         console.log("Logging out")
