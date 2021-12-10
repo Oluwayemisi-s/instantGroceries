@@ -10,7 +10,7 @@ function CategoryView({allCategories, user, setSearch, search, setCount}){
       });
 
     return (
-        <div>
+        <div className = "category">
           {displayCategory}
         </div>
     )

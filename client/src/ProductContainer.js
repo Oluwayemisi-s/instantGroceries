@@ -41,8 +41,7 @@ function ProductContainer({user, setCount}){
                   <Cart user = {user} setCount = {setCount}/>
                 </Route>
             </Switch>
-            <hr/>
-            <footer>Your number 1 online grocery store!</footer>
+            
         </div>
     )
 }

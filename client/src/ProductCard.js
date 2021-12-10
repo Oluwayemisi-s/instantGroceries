@@ -69,7 +69,7 @@ function ProductCard({product, user, setCount, onDelete}){
     
     return (
       
-        <div class="product-card">
+        <div className="product-card">
       
           {errors.map((err) => (<Error key={err}>{err}</Error>))}
             <img src = {product.image} alt = "product" width="200px"/>
