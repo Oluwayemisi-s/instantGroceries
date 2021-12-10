@@ -32,13 +32,17 @@ button:hover {
 }
 
 input {
-  margin: 4px;
+  margin: 0px;
   height: 2em;
-  width: 20em; 
+
+  width: 20em;
+  display: inline-block;
+
 }
 
 input[type=text] {
   font-family: 'Merriweather', serif;
+
 }
 
 select {
@@ -49,6 +53,10 @@ select {
   font-family: 'Merriweather', serif;
 }
 
+.signup-login-form label{
+  justify-content: center; 
+  display: block;
+}
 .header {
   display: flex;
   font-family: 'Merriweather', serif;
@@ -90,9 +98,12 @@ h6 {
   font-size: 1em;
   border: 2px solid #db9dc4;
   border-radius: 7px;
-  margin: 4px;
-  height: 1.5em;
-  width: 10em;
+  padding: 12px 20px;
+  margin-left: 5px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
 .dissappear {
@@ -127,14 +138,17 @@ h6 {
 }
 
 .signup-login-form{
-    color: rgb(7, 4, 7);
+    display: inline-block;
+    color: rgb(7, 4, 7); 
+    text-align: center;
+    padding: 7px 0px;
+    margin: 0 auto;
     text-align: center;
     padding: 7px 0px;
     font-family: 'Merriweather', serif;
     font-size: 20px;
-    text-align: center;
     padding: 14px 20px;
-    width:75%;
+    width:50%; 
     justify-content: center;
 } 
 
