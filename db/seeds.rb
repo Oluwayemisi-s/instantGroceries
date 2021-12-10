@@ -41,6 +41,7 @@ snacks = Category.create(category_name: "Snacks")
 pets = Category.create(category_name: "Pets")
 household = Category.create(category_name: "Household")
 vitamins = Category.create(category_name: "Vitamins & Supplements")
+drinks = Category.create(category_name:"Drinks∑∑")
 
 # category_id = Category.all.sample.id 
 
@@ -63,6 +64,7 @@ Product.create(name: "Blue Buffalo Tastefuls Chicken Entree Pate Canned Cat Food
 Product.create(name: "Mrs. Meyer's Clean Day Multi-Surface Everyday Cleaner Honeysuckle Scent",category_id:household.id,product_description: "• Quick and easy multi surface spray removes stuck on dirt, • A fresh way to clean, refresh, and remove odors from non-porous surfaces throughout the house, • Garden-fresh Honeysuckle cleaner has a tempting sweet scent – a charming mix of flowers and fruits, • Safe to use as a hardwood floor cleaner, tile cleaner, on countertops, walls and more, • Mrs. Meyer's produces cruelty free cleaners. None of our products are tested on animals, • Multi purpose cleaner for use in the kitchen, bathroom, and other rooms throughout the house",image: "https://s3.images-iherb.com/mrs/mrs11441/l/14.jpg",price: 10.99,stock: 10)
 Product.create(name: " 100% Recycled Soft & Strong Bath Tissue 12 Pack",category_id:household.id,product_description:"eventh Generation 100% Recycled Paper* Bath Tissue is an extra strong and soft 2-ply toilet paper whitened without chlorine bleach. It?s gentle on the environment, septic-safe and RV-friendly, too.For more than 25 years, Seventh Generation has been thoughtfully formulating safe and effective plant-based products that work. Really well. " ,image:"https://i5.walmartimages.com/asr/be1bc214-4671-425d-8c90-922d698d0d6a_2.9ab1575e8cbe065199012524c72f81f9.jpeg" ,price: 50.99,stock: 3)
 Product.create(name: "Nature's Way Alive! Once Daily ",category_id:vitamins.id ,product_description:"Complete ultra potency daily multivitamin supplement for men. With high potency B-vitamins to help convert food into fuel, including the active form of B-12 and folate.* Supports eye health, bone health, heart health, immune health, muscle function, and energy metabolism.* With food-based powder blends including Daily Greens, Orchard Fruits & Garden Veggies powder blend, Cardio, and Digestive Enzyme. Gluten-free. No artificial colors." ,image:"https://m.media-amazon.com/images/I/71W14GOhB1L._AC_SL1500_.jpg" ,price: 20.99,stock: 1)
+Product.create(name: "Coca-Cola",category_id: drinks.id,product_description:"A fizzy drink which quenches the thirst!!!",image:"https://www.reyescocacola.com/images/brands/Coke.jpg",price: 5.99,stock: 5)
 
 # 10.times do
 #     product = Product.all.sample
