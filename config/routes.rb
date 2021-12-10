@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   
-  resources :carts
-  resources :users
+  resources :carts, only: [:create, :show, :destroy]
+  resources :users, only: [:create, :show]
   resources :products
-  resources :categories
+  resources :categories, only: [:index, :show]
 
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'

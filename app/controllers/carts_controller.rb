@@ -21,9 +21,6 @@ class CartsController < ApplicationController
         render json:{}
     end
 
-    def update
-    end
-
     private
 
     def cart_params
