@@ -49,7 +49,7 @@ export default function LoginForm ( {setUser, handleFormDisplay} ) {
         <div>
         
             <form className = "signup-login-form" onSubmit={handleSubmit}>
-            {/* <fieldset> */}
+            <fieldset>
             <legend>Log into your account:</legend>
 
             {errors.map((err) => (<Error key={err}>{err}</Error>))}
@@ -73,7 +73,7 @@ export default function LoginForm ( {setUser, handleFormDisplay} ) {
             />
              <br/>
             <button type="submit">Sign In</button><br></br>
-            {/* </fieldset> */}
+            </fieldset>
             <h3>Don't have an account yet? <button onClick = {handleFormDisplay}>Sign Up Now!</button></h3>
             </form>
         </div>
