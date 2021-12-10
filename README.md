@@ -9,12 +9,12 @@
         - GitHub userName: Oluwayemisi-s
 
 # Reason for the project: 
-    This project was built as a requirment to completing the fourth phase of our software engineering course at Flatiron school (class of 09/21). It's main aim is to apply and showcase the knowledge and skills we have acquired from the beginning of our bootcamp up to this point. These skills are demonstrated in our use of JavaScript and React functional components - this encompasses using React states to manage and manipulate dynamically changing events on the DOM, setting and using controlled forms and persisting data to a backend server. We also demostrated our skill of building a server side application to manage and communicate with our frontend using ruby on rails to manage a PostgreSQL database, define restful and non-restful routes, manage authentication and authorizations and validating data received from our frontend. Finally, we demostrated our knowledge and skill with CSS to design our web application, amongst others.
+    This project was built as a requirment to completing the fourth phase of our software engineering course at Flatiron school (class of 09/21). The main aim is to apply and showcase the knowledge and skills we have acquired from the beginning of our bootcamp up to this point. These skills are demonstrated in our use of JavaScript and React functional components - this encompasses using React states to manage and manipulate dynamically changing events on the DOM, setting and using controlled forms and persisting data to a backend server. We also demostrated our skill of building a server side application to manage and communicate with our frontend using ruby on rails to manage a PostgreSQL database, define restful and non-restful routes, manage authentication and authorizations and validating data received from our frontend. Finally, we demostrated our knowledge and skill with CSS to design our web application, amongst others.
 
 # Motivation for the project: 
     Over the last year or two, and with covid raging, online shopping has been one of the most vital industries that people have had no choice but to resort to. More importantly, some online shops have begun to offer almost instant delieveries on purchased products, further adding to the immense convenience online shopping provides.
 
-    With this boost in the industry, my partner and i felt the need to apply our aquired knowledge to create an online store, specifically targeted to sell groceries. 
+    With this boost in the industry, my partner and I felt the need to apply our aquired knowledge to create an online store, specifically targeted to sell groceries. 
 
     We were greatly inspired by instacart and some instant grocery stores. Eventhough we are unable to match the functionality level and efficiency of instacart, we have replicated some of their basic features into our own custom application. 
 
@@ -44,7 +44,7 @@
     - Fix some known bugs
 
     Known Bugs: 
-    - if not logged in, navbar should not be display and navlinks should not work. They currently display and work if the exact link/path is typed in the browser
+    - If not logged in, navbar should not be display and navlinks should not work. They currently display and work if the exact link/path is typed in the browser
 
 # Acknowledgments:
     This project was accomplished with the help of the many various resources provided by Flatiron Bootcamp, including our instructor who supported us whenever we hit a roadblock. 
@@ -63,6 +63,5 @@ This project was a collective effort between:
 
 **Haarika Ramadugu **
 
-*Instagram*: https://www.instagram.com/
-
+*Email: hramadugu@gmail.com
 
