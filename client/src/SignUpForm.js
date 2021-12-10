@@ -84,7 +84,7 @@ export default function SignupForm( {setUser, handleFormDisplay} ) {
                 value={formData.email}
                 onChange={handleChange}
             />
-            <br/>
+           <br/>
             <label htmlFor="password">Password:</label>
             <input
                 className="password-signup-input"
