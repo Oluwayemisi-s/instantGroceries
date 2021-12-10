@@ -1,20 +1,26 @@
 import { useState, useEffect } from 'react'
 import CartItem from './CartItem'
 import Checkout from './Checkout'
+import Error from './Errors'
 
 function Cart({setCount}){
     const [carts, setCarts] = useState([])
     const [isLoading, setIsLoading] = useState(true)
     const [product, setProduct] = useState({})
     const [checkout, setCheckout] = useState(false)
+    const [errors, setErrors] = useState([])
    
 
     useEffect(() => {
         fetch("/cartitems")
-          .then((res) => res.json())
-          .then((data) => {setCarts(data)
-            setIsLoading(false)
-        });
+          .then((res) => {
+            if (res.ok) {
+              res.json().then((data) => setCarts(data));
+              setIsLoading(false)
+            } else {
+              res.json().then((err) => setErrors(err.errors));
+            }
+        })
     }, [])
 
     if (isLoading) return <div>Page is loading</div>
@@ -79,6 +85,7 @@ function Cart({setCount}){
 
     return (
         <div className = "cart-container">
+            {errors.map((err) => (<Error key={err}>{err}</Error>))}
             <div className = {checkout ? "dissappear" : ""}>
                 <h2>Hello {name}, here are the items in your cart:</h2>
                 {cart_item}
