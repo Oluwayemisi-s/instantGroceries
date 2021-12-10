@@ -16,10 +16,13 @@ function AddNewProduct({user}){
 
     useEffect(() => {
         fetch("/categories")
-          .then((res) => res.json())
-          .then((data) => {
-              setCategories(data)
-            });
+          .then((res) => {
+            if (res.ok) {
+              res.json().then((data) => setCategories(data));
+            } else {
+              res.json().then((err) => setErrors(err.errors));
+            }
+          })    
     }, [])
     
       const handleChange = (e) => {

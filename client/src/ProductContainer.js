@@ -6,16 +6,23 @@ import Category from "./Category";
 import AddNewProduct from "./AddNewProduct";
 import Cart from "./Cart";
 import Search from "./Search";
+import Error from "./Errors";
 
 function ProductContainer({user, setCount}){
 
     const [allProducts, setAllProducts] = useState([]);
     const [search, setSearch] = useState("");
+    const [errors, setErrors] = useState([])
    
     useEffect(() => {
         fetch("/products")
-          .then((res) => res.json())
-          .then((data) => setAllProducts(data));
+          .then((res) => {
+            if (res.ok) {
+              res.json().then((data) => setAllProducts(data));
+            } else {
+              res.json().then((err) => setErrors(err.errors));
+            }
+          })          
       }, []);
 
 
@@ -26,6 +33,9 @@ function ProductContainer({user, setCount}){
       
     return (   
         <div className = "product-container">
+           {errors.map((err) => (
+              <Error key={err}>{err}</Error>
+            ))}
           <Search search={search} setSearch={setSearch} /> 
             <Switch>
                 <Route exact path = "/products">
