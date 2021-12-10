@@ -1,7 +1,7 @@
 //import { useState } from "react"
 //import Cart from "./Cart"
 
-export default function Header ( {user, setUser, count, setCount} ) {
+export default function Header ( {user, setUser, count} ) {
 
     function handleLogout(){
         console.log("Logging out")
@@ -13,11 +13,12 @@ export default function Header ( {user, setUser, count, setCount} ) {
     }
 
     return(
-        <div>
-            <h1>Welcome to Instant Grocery Shop!</h1>
+        <div className = "header">
+            <h1>The Instant Grocery Shop!</h1>
+            <div className = "inside-header">
             {user ? <button onClick = {handleLogout}>Logout!</button> : null}
-            <h3> 🛒 {count}</h3>
-            <hr></hr>
+            {/* <h3> 🛒 {count}</h3>   */}
+            </div>  
         </div>
     )
 

@@ -19,7 +19,7 @@ function Cart({setCount}){
 
     if (isLoading) return <div>Page is loading</div>
   
-    if(carts.length === 0) return <h3>No Items currently in cart.<br/> Navigate to products or categories page to add..</h3> 
+    if(carts.length === 0) return <h2>No Items currently in cart.<br/> Navigate to products or categories page to add..</h2> 
 
     const name = carts[0].user.name
     // const cartCount = carts.lenght
@@ -78,11 +78,11 @@ function Cart({setCount}){
     const cart_item = carts.map(item => <CartItem key = {item.id} item = {item} onDelete={onDelete} setCount = {setCount}/>)
 
     return (
-        <div>
+        <div className = "cart-container">
             <div className = {checkout ? "dissappear" : ""}>
-                <h3>Hello {name}, here are the items in your cart:</h3>
+                <h2>Hello {name}, here are the items in your cart:</h2>
                 {cart_item}
-                <h3>Total price: ${totalAmount}</h3>
+                <h2>Total price: ${totalAmount}</h2>
                 <button onClick = {handleCheckout}>Checkout</button>
             </div>
             {checkout ? <Checkout name = {name}/> : null}

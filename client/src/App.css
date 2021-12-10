@@ -1,60 +1,156 @@
 body {
   text-align: center;
-   background-image: url("https://images.unsplash.com/photo-1532467411038-57680e3dc0f1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
+   background-image: url("https://media.istockphoto.com/photos/healthy-eating-background-picture-id515856750?k=20&m=515856750&s=612x612&w=0&h=qQGIvssqNOjJsOTBJ5oeSn2bls94L9tUi5OnRAg0cbU=");
   /* background-color: grey; */
-  /* background-repeat: repeat; */
-  background-size: auto;
+  /* background-repeat: no-repeat; */
+  background-size: 100%;
   margin:0%
+}
+
+button {
+  background-color: #db9dc4; 
+  border: none;
+  border-radius: 8px;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bolder;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+button:hover {
+  /* box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19); */
+  border: 2px solid rgb(225, 199, 174);
+    overflow: hidden; 
 }
 
 input {
   margin: 4px;
   height: 2em;
   width: 20em;
+  
+}
+
+select {
+  margin: 4px;
+  height: 3em;
+  width: 10em;
+  border-radius: 4px;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 2.5em;
+  background-color: rgb(247, 240, 240, .70);
+}
+
+.header .inside-header {
+  display:flex;
+  /* flex-direction:row-reverse; */
+  width: 100%;
+  justify-content: center;
+  /* margin-left: 20px;
+  margin-right: 20px; */
+  font-size: 1.5em; 
+}
+
+h6 {
+  margin-left: 20px;
+  margin-right: 30px;
+}
+
+/* .header .inside-header button {
+  height: 50px;
+} */
+
+.search {
+  font-size: 1.75em;
+  font-weight: bolder;
+  margin-top: 2px solid black;
+  color: #cd1d8c
+}
+.search input{
+  font-size: 1em;
+  border: 2px solid #db9dc4;
+  border-radius: 7px;
+  margin: 4px;
+  height: 1.5em;
+  width: 10em;
+}
+
+.signup-login-form input {
+  font-size: 1em;
+  border: 2px solid #db9dc4;
+  border-radius: 7px;
+  margin: 4px;
+  height: 1.5em;
+  width: 10em;
 }
 
 .dissappear {
   display: none;
 }
 
+.navbar {
+  background-color: rgb(247, 240, 240, .70);
+  /* width: 75%; */
+  margin: auto;
+  margin-bottom: 15px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  height: 7%;
+}
+
 .navbar ul{
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
       font-family: "Zen Antique", serif;
       justify-content: center;
       font-size: 2em;
       justify-content: space-around;
-      margin: 100px; 
-      margin-top: 10px;
-      margin-bottom: 25px;
+      /* margin: 100px;  */
+      /* margin-top: 25px;
+      margin-bottom: 25px; */
      /* margin-left: 20px;
      margin-right: 20px; */
       font-family: "Zen Antique", serif;
-      text-decoration:none;
+}
+
+.navbar ul a {
+  text-decoration:none;
+  color: #cd1d8c;
 }
 
 
 .signup-login-form{
-  border: 5px outset #0c0c0a; ;
+  /* border: 5px outset #0c0c0a; ; */
     color: rgb(7, 4, 7);
     text-align: center;
-    flex-wrap: center;
+    /* flex-wrap: center; */
     padding: 7px 0px;
-    margin: 36px 10px 50px 50px;
+    margin-left: 5px;
+    /* margin: 36px 10px 50px 50px; */
     font-family: "Lucida Console", "Courier New", monospace;
     font-size: 20px;
     text-align: center;
     padding: 14px 20px;
-    border: 5px outset #050503; ;
-    border-radius: 10px;
+    /* border: 5px outset #050503; ; */
+    /* border-radius: 10px; */
     
 } 
- .signup-login-form [type=text] {
+ /* .signup-login-form {
   border-radius: 6px;
   border: 1px solid transparent;
   /* border-color: #dbdbdb; */
-  -webkit-appearance: none;
+  /* -webkit-appearance: none;
   width: 25%;
   font-size: 1rem;
   line-height: 1.5;
@@ -63,13 +159,14 @@ input {
   font-size: 1rem;
   font-weight: 2em;
   margin-bottom: 8px;
-}
-.signup-login-form [type=password] {
+}  */
+
+/* .signup-login-form [type=password] {
 
   border-radius: 6px;
   border: 1px solid transparent;
   /* border-color: #dbdbdb; */
-  width: 25%;
+  /* width: 25%;
   font-size: 1rem;
   line-height: 1.5;
   padding: 4px;
@@ -78,7 +175,8 @@ input {
   font-size: 1rem;
   font-weight: 700;
   margin-bottom: 8px;
-}
+}  */
+
 .button {
   top: 40px;
   bottom: 40px;
@@ -102,22 +200,55 @@ input {
     margin-bottom: 5px;
 }
 
-  .product-card
-  {
+  .product-card {
     display: flex;
     width: 25%;
     /* height: 700px; */
     flex-direction: column;
     align-items: center; 
-    padding: 5px 5px;
+    /* padding: 5px 5px; */
     justify-content: center;
     margin: 36px 10px 50px 50px;
-    border: 5px outset #050503; 
-    border-radius: 20px; 
+    /* border: 5px outset #050503;  */
+    /* border-radius: 20px;  */
     font-family: "Lucida Console", "Courier New", monospace;
     font-size: 20px; 
     /* text-align:justify;  */
-    background-color: white;
+    background-color: rgb(247, 240, 240, .90);
+    border-radius: 15px;
+    border: 1px solid #db9dc4;
+    border-style: ridge;
+    padding: 10px;
+    box-shadow:20px 20px 40px rgb(225, 199, 174);
+   }
 
+   .product-card select {
+    width: 5em;
+   }
+
+   .product-card:hover {
+    border: 5px solid rgb(247, 240, 240, .90);
+    overflow: hidden;  
+   }
+
+   .cart-item {
+     display:flex;
+     flex-direction: row;
+     font-size: 2em;
+     justify-content: center;
+     text-align: center;
+     margin-left: 20px;
+     margin-right: 20px;
+   }
+
+   .cart-item button {
+     height: 50%;
+     margin-top: 30px;
+   }
+
+   .inside-cart-item {
+     display: flex;
+     flex-direction: column;
+     align-self: center;
    }
   

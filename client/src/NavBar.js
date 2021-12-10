@@ -12,7 +12,7 @@ return(
         <Link to = "/addnewproduct"> Add New Product</Link >
         <Link to ="/cart">🛒 {count} Cart </Link > 
      </ul>
-    
+   
     </div>
 )
 }

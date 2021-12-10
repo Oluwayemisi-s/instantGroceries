@@ -23,13 +23,12 @@ export default function CartItem ({item, onDelete, setCount}) {
           };
   const total = item.product.price * item.quantity
     return (
-        <div>
-            <img src = {item.product.image} alt = "product" width = "100px"/>
-            <small>{item.product.name}</small>
-            <small>Qty: {item.quantity}</small>
-            <small>Price: ${total}</small>
+        <div className = "cart-item">
+            <div className = "inside-cart-item"><img src = {item.product.image} alt = "product" width = "100px"/>
+            <h6>{item.product.name}</h6></div>
+            <h6>Qty: {item.quantity}</h6>
+            <h6>Price: ${total}</h6>
             <button onClick = {handleCartDelete}>Delete from cart</button>
-            <hr width = "75%"></hr>
         </div>
     )
 }
