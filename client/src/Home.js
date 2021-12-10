@@ -21,7 +21,7 @@ export default function Login () {
         fetch("/cartitems")
         .then((res) => res.json())
         .then((data) => {
-            console.log(data.length)
+            
             setCount(data.length) 
       });
     }, [])

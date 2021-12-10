@@ -17,12 +17,14 @@ function CategoryCard({category, user, search, setCount}){
       }
 
      return(
-        <div>
+        <>
+        <div className = "category-card">
             <h3  onClick = {handleClick}>{category.category_name}</h3>
+            </div>
             {showProducts ? 
                 <ProductView allProducts = {filteredProducts} user = {user} setCount = {setCount}/>: null
             }
-        </div>
+        </>
     )
 }
 

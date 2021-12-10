@@ -82,7 +82,7 @@ function Cart({setCount}){
             <div className = {checkout ? "dissappear" : ""}>
                 <h2>Hello {name}, here are the items in your cart:</h2>
                 {cart_item}
-                <h2>Total price: ${totalAmount}</h2>
+                <h1>Total price: ${totalAmount}</h1>
                 <button onClick = {handleCheckout}>Checkout</button>
             </div>
             {checkout ? <Checkout name = {name}/> : null}
