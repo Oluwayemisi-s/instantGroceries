@@ -2,10 +2,6 @@ class UsersController < ApplicationController
     rescue_from ActiveRecord::RecordInvalid, with: :record_invalid
     #before_action :is_authorised, only: [:update, :destroy]
 
-    def index
-        users = User.all 
-        render json: users, status: :ok
-    end
 
     def create 
         user = User.create!(user_params)
@@ -20,12 +16,6 @@ class UsersController < ApplicationController
         else
             render json: {errors: ["Login to continue"]}, status: :unauthorized
         end
-    end
-
-    def update
-    end
-
-    def destroy
     end
 
     private

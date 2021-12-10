@@ -13,8 +13,6 @@ class CategoriesController < ApplicationController
         render json: category.products, status: :ok
     end
 
-    def create
-    end
 
     private
 

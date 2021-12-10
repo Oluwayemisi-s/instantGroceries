@@ -3,13 +3,6 @@ User.destroy_all
 Product.destroy_all
 Category.destroy_all
 
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 
 User.create(name:"Haarika" ,username: "haarika_r",email: "harry@ymail.com",password:"12345asd",isAdmin:true )
 User.create(name:Faker::Name.name ,username: Faker::Internet.username,email: Faker::Internet.email,password:Faker::Internet.password(min_length: 6),isAdmin: false)
@@ -26,24 +19,15 @@ User.create(name:Faker::Name.name ,username: Faker::Internet.username,email: Fak
 vegetables = Category.create(category_name: "Vegetables")
 spices=Category.create(category_name: "Spices & Condiments")
 dairy = Category.create(category_name: "Dairy")
-# Category.create(category_name: "Dairy")
 bakery=Category.create(category_name: "Bakery & Deli Items")
-# Category.create(category_name: "Bakery & Deli Items")
-# Category.create(category_name: "Bakery & Deli Items")
 baking = Category.create(category_name: "Baking")
 meat=Category.create(category_name: "Meat & Seafood")
-# Category.create(category_name: "Meat & Seafood")
-# Category.create(category_name: "Bakery & Deli Items")
 frozen=Category.create(category_name: "Frozen")
-# Category.create(category_name: "Frozen")
-# Category.create(category_name: "Frozen")
 snacks = Category.create(category_name: "Snacks")
 pets = Category.create(category_name: "Pets")
 household = Category.create(category_name: "Household")
 vitamins = Category.create(category_name: "Vitamins & Supplements")
 drinks = Category.create(category_name:"Drinks")
-
-# category_id = Category.all.sample.id 
 
 Product.create(name: "Brocolli",category_id:vegetables.id  ,product_description: "Broccoli is an edible green plant in the cabbage family whose large flowering head, stalk and small associated leaves are eaten as a vegetable.Final cost by weight",image:"https://solidstarts.com/wp-content/uploads/Broccoli_edited-scaled.jpg" ,price:1.57 ,stock: 10)
 Product.create(name: "Cumin Seeds",category_id:spices.id  ,product_description:"Cumin is a flowering plant in the family Apiaceae, native to the Irano-Turanian Region. Its seeds – each one contained within a fruit, which is dried – are used in the cuisines of many cultures in both whole and ground form" ,image:"https://m.media-amazon.com/images/I/51WXn0g0duL._SX425_.jpg" ,price: 4.99,stock: 6 )
@@ -65,10 +49,5 @@ Product.create(name: " 100% Recycled Soft & Strong Bath Tissue 12 Pack",category
 Product.create(name: "Nature's Way Alive! Once Daily ",category_id:vitamins.id ,product_description:"Complete ultra potency daily multivitamin supplement for men. With high potency B-vitamins to help convert food into fuel, including the active form of B-12 and folate.* Supports eye health, bone health, heart health, immune health, muscle function, and energy metabolism.* With food-based powder blends including Daily Greens, Orchard Fruits & Garden Veggies powder blend, Cardio, and Digestive Enzyme. Gluten-free. No artificial colors." ,image:"https://m.media-amazon.com/images/I/71W14GOhB1L._AC_SL1500_.jpg" ,price: 20.99,stock: 1)
 Product.create(name: "Coca-Cola",category_id: drinks.id,product_description:"A fizzy drink which quenches the thirst!!!",image:"https://www.reyescocacola.com/images/brands/Coke.jpg",price: 5.99,stock: 5)
 
-# 10.times do
-#     product = Product.all.sample
-#     user = User.all.sample
-#     Cart.create(product_id: product.id, user_id: user.id, quantity: rand(1..10))
-# end
  puts "Seeding done....."
 
